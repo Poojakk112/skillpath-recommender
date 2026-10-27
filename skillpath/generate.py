@@ -395,21 +395,14 @@ def generate(scale: C.Scale, seed: int = C.DEFAULT_SEED) -> tuple[dict, dict]:
         "course_id": course_ids[paths["course_idx"]],
         "created_at": to_ts(paths["created_min"]),
     })
-    events = lifecycle.derive_path_events(path_tbl, attempts, results, cat.skills)
-    events.insert(0, "event_id", [ids.seq("PEV", i + 1) for i in range(len(events))])
-    path_tbl = path_tbl.join(lifecycle.path_state(events), on="path_id")
-
-    # ---- learners (account status derived from attempts)
     learners = learners.copy()
     learners["signup_at"] = to_ts(learners["signup_at"])
-    learners["account_status"] = lifecycle.account_status(learners, attempts)
-
     tables = {
         "course": cat.courses, "skill": cat.skills, "skill_prerequisite": cat.prerequisites,
         "content_item": cat.content, "content_skill": cat.content_skill, "learner": learners,
-        "learning_path": path_tbl, "learning_path_event": events, "attempt": attempts,
-        "assessment_result": results,
+        "learning_path": path_tbl, "attempt": attempts, "assessment_result": results,
     }
+    refresh_derived_state(tables)
     n_att = attempts.groupby("learner_id").size()
     truth = truth.copy()
     truth["attempts"] = truth["learner_id"].map(n_att).fillna(0).astype(int)
@@ -425,6 +418,18 @@ def generate(scale: C.Scale, seed: int = C.DEFAULT_SEED) -> tuple[dict, dict]:
         "latent_skill_state": latent_df,
     }
     return tables, truth_tables
+
+
+def refresh_derived_state(tables: dict) -> None:
+    """(Re)derive path history, path state and learner account status from attempts."""
+    base = tables["learning_path"][["path_id", "learner_id", "course_id", "created_at"]]
+    events = lifecycle.derive_path_events(base, tables["attempt"], tables["assessment_result"], tables["skill"])
+    events.insert(0, "event_id", [ids.seq("PEV", i + 1) for i in range(len(events))])
+    tables["learning_path_event"] = events
+    tables["learning_path"] = base.join(lifecycle.path_state(events), on="path_id")
+    learners = tables["learner"].copy()
+    learners["account_status"] = lifecycle.account_status(learners, tables["attempt"])
+    tables["learner"] = learners
 
 
 def derive_assessment_results(attempts: pd.DataFrame, content_skill: pd.DataFrame) -> pd.DataFrame:

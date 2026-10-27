@@ -34,25 +34,47 @@ EXPECTED_ACTION = {
 }
 
 
-def inject(tables: dict, scale: C.Scale, seed: int) -> tuple[dict, pd.DataFrame]:
-    rng = _rng(seed, 20)
-    n = scale.anomalies_per_type
+class Labels:
+    """Collects ground-truth labels; written to ground_truth/anomalies.csv only."""
+
+    def __init__(self):
+        self.rows: list[dict] = []
+
+    def __call__(self, issue, table, record_id, detail):
+        self.rows.append(dict(issue_type=issue, table=table, record_id=record_id,
+                              expected_action=EXPECTED_ACTION[issue], detail=detail))
+
+    def frame(self) -> pd.DataFrame:
+        gt = pd.DataFrame(self.rows)
+        gt.insert(0, "anomaly_id", [ids.seq("ANM", i + 1) for i in range(len(gt))])
+        return gt
+
+
+def inject_behaviour(tables: dict, scale: C.Scale, seed: int, label: Labels) -> dict:
+    """Stage A (before decisions): learners looping without progress.
+
+    This is genuine (if unhealthy) learner behaviour, so the recommender sees it
+    and must escalate it; derived state is refreshed afterwards.
+    """
     tables = dict(tables)
-    labels: list[dict] = []
+    _loops(tables, _rng(seed, 21), scale.anomalies_per_type, label)
+    return tables
 
-    def label(issue, table, record_id, detail):
-        labels.append(dict(issue_type=issue, table=table, record_id=record_id,
-                           expected_action=EXPECTED_ACTION[issue], detail=detail))
 
-    _bad_recommendations(tables, rng, n, label)
-    _bad_timestamps(tables, rng, n, label)
-    _orphan_mappings(tables, rng, n, label)
-    _future_mastery(tables, rng, n, label)
-    _loops(tables, rng, n, label)
+def inject_data_errors(tables: dict, scale: C.Scale, seed: int, label: Labels) -> dict:
+    """Stage B: corrupt source records (bad timestamps, orphan skill mappings)."""
+    tables = dict(tables)
+    _bad_timestamps(tables, _rng(seed, 22), scale.anomalies_per_type, label)
+    _orphan_mappings(tables, _rng(seed, 23), scale.anomalies_per_type, label)
+    return tables
 
-    gt = pd.DataFrame(labels)
-    gt.insert(0, "anomaly_id", [ids.seq("ANM", i + 1) for i in range(len(gt))])
-    return tables, gt
+
+def inject_decision_errors(tables: dict, scale: C.Scale, seed: int, label: Labels) -> dict:
+    """Stage C (after decisions): a bad recommendation log and leaky mastery snapshots."""
+    tables = dict(tables)
+    _bad_recommendations(tables, _rng(seed, 24), scale.anomalies_per_type, label)
+    _future_mastery(tables, _rng(seed, 25), scale.anomalies_per_type, label)
+    return tables
 
 
 def _next_seq(df: pd.DataFrame, col: str) -> int:
@@ -192,9 +214,10 @@ def _loops(tables, rng, n, label):
     paths = tables["learning_path"]
     last_any = att.groupby("learner_id")["started_at"].max()
     counts = att.groupby("learner_id").size()
-    start = pd.Timestamp("2026-09-03 18:00")
-    window = (pd.Timestamp("2026-08-01"), pd.Timestamp("2026-09-01"))
-    cand = paths[(paths["current_status"] == "ACTIVE")
+    start = pd.Timestamp("2026-08-03 18:00")
+    window = (pd.Timestamp("2026-06-01"), pd.Timestamp("2026-08-01"))
+    cand = paths[paths["current_status"].isin(("ACTIVE", "STALLED"))
+                 & (paths["created_at"] < start)
                  & paths["learner_id"].map(last_any).between(*window, inclusive="left")]
     cand = cand.drop_duplicates("learner_id")
     passed = set(zip(att.loc[att["score"] >= C.PASS_SCORE, "learner_id"],

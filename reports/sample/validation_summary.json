@@ -1,0 +1,1851 @@
+{
+  "rows": {
+    "course": 5,
+    "skill": 50,
+    "skill_prerequisite": 53,
+    "content_item": 200,
+    "content_skill": 284,
+    "learner": 150,
+    "learning_path": 256,
+    "learning_path_event": 1023,
+    "attempt": 4045,
+    "assessment_result": 4039,
+    "mastery_snapshot": 1708,
+    "recommendation": 1859
+  },
+  "checks_run": 202,
+  "checks_failed": 8,
+  "quarantined": {
+    "content_skill": 5,
+    "attempt": 5,
+    "assessment_result": 0
+  },
+  "issues_by_type": {
+    "ATTEMPT_TIMESTAMP_ORDER_INVALID": 5,
+    "CONTENT_MAPPED_TO_MISSING_SKILL": 5,
+    "MASTERY_USES_FUTURE_ATTEMPT": 5,
+    "PATH_LOOP_NO_PROGRESS": 5,
+    "REC_VIOLATES_PREREQUISITE": 5
+  },
+  "unexpected_issue_types": [],
+  "checks": [
+    {
+      "check": "course.course_id.required",
+      "category": "schema",
+      "table": "course",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 5,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "course.course_id.pattern",
+      "category": "schema",
+      "table": "course",
+      "issue_type": "ID_FORMAT_INVALID",
+      "rows_checked": 5,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "course.course_id.unique",
+      "category": "schema",
+      "table": "course",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 5,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "course.title.required",
+      "category": "schema",
+      "table": "course",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 5,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "course.title.unique",
+      "category": "schema",
+      "table": "course",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 5,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "course.domain.required",
+      "category": "schema",
+      "table": "course",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 5,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "course.domain.allowed",
+      "category": "schema",
+      "table": "course",
+      "issue_type": "ENUM_VALUE_INVALID",
+      "rows_checked": 5,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "course.level.required",
+      "category": "schema",
+      "table": "course",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 5,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "course.level.allowed",
+      "category": "schema",
+      "table": "course",
+      "issue_type": "ENUM_VALUE_INVALID",
+      "rows_checked": 5,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "course.launched_at.required",
+      "category": "schema",
+      "table": "course",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 5,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "course.status.required",
+      "category": "schema",
+      "table": "course",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 5,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "course.status.allowed",
+      "category": "schema",
+      "table": "course",
+      "issue_type": "ENUM_VALUE_INVALID",
+      "rows_checked": 5,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "course.primary_key",
+      "category": "primary_key",
+      "table": "course",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 5,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill.skill_id.required",
+      "category": "schema",
+      "table": "skill",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 50,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill.skill_id.pattern",
+      "category": "schema",
+      "table": "skill",
+      "issue_type": "ID_FORMAT_INVALID",
+      "rows_checked": 50,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill.skill_id.unique",
+      "category": "schema",
+      "table": "skill",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 50,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill.course_id.required",
+      "category": "schema",
+      "table": "skill",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 50,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill.course_id.fk->course.course_id",
+      "category": "foreign_key",
+      "table": "skill",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 50,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill.name.required",
+      "category": "schema",
+      "table": "skill",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 50,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill.name.unique",
+      "category": "schema",
+      "table": "skill",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 50,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill.level.required",
+      "category": "schema",
+      "table": "skill",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 50,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill.level.range",
+      "category": "schema",
+      "table": "skill",
+      "issue_type": "VALUE_OUT_OF_RANGE",
+      "rows_checked": 50,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill.primary_key",
+      "category": "primary_key",
+      "table": "skill",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 50,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill_prerequisite.skill_id.required",
+      "category": "schema",
+      "table": "skill_prerequisite",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 53,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill_prerequisite.skill_id.fk->skill.skill_id",
+      "category": "foreign_key",
+      "table": "skill_prerequisite",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 53,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill_prerequisite.prerequisite_skill_id.required",
+      "category": "schema",
+      "table": "skill_prerequisite",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 53,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill_prerequisite.prerequisite_skill_id.fk->skill.skill_id",
+      "category": "foreign_key",
+      "table": "skill_prerequisite",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 53,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill_prerequisite.min_mastery.required",
+      "category": "schema",
+      "table": "skill_prerequisite",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 53,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill_prerequisite.min_mastery.range",
+      "category": "schema",
+      "table": "skill_prerequisite",
+      "issue_type": "VALUE_OUT_OF_RANGE",
+      "rows_checked": 53,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill_prerequisite.effective_from.required",
+      "category": "schema",
+      "table": "skill_prerequisite",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 53,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill_prerequisite.is_cross_course.required",
+      "category": "schema",
+      "table": "skill_prerequisite",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 53,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill_prerequisite.primary_key",
+      "category": "primary_key",
+      "table": "skill_prerequisite",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 53,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_item.content_id.required",
+      "category": "schema",
+      "table": "content_item",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_item.content_id.pattern",
+      "category": "schema",
+      "table": "content_item",
+      "issue_type": "ID_FORMAT_INVALID",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_item.content_id.unique",
+      "category": "schema",
+      "table": "content_item",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_item.course_id.required",
+      "category": "schema",
+      "table": "content_item",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_item.course_id.fk->course.course_id",
+      "category": "foreign_key",
+      "table": "content_item",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_item.title.required",
+      "category": "schema",
+      "table": "content_item",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_item.format.required",
+      "category": "schema",
+      "table": "content_item",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_item.format.allowed",
+      "category": "schema",
+      "table": "content_item",
+      "issue_type": "ENUM_VALUE_INVALID",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_item.difficulty.required",
+      "category": "schema",
+      "table": "content_item",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_item.difficulty.range",
+      "category": "schema",
+      "table": "content_item",
+      "issue_type": "VALUE_OUT_OF_RANGE",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_item.duration_min.required",
+      "category": "schema",
+      "table": "content_item",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_item.duration_min.range",
+      "category": "schema",
+      "table": "content_item",
+      "issue_type": "VALUE_OUT_OF_RANGE",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_item.is_assessed.required",
+      "category": "schema",
+      "table": "content_item",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_item.status.required",
+      "category": "schema",
+      "table": "content_item",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_item.status.allowed",
+      "category": "schema",
+      "table": "content_item",
+      "issue_type": "ENUM_VALUE_INVALID",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_item.primary_key",
+      "category": "primary_key",
+      "table": "content_item",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_skill.content_id.required",
+      "category": "schema",
+      "table": "content_skill",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 284,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_skill.content_id.fk->content_item.content_id",
+      "category": "foreign_key",
+      "table": "content_skill",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 284,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_skill.skill_id.required",
+      "category": "schema",
+      "table": "content_skill",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 284,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_skill.skill_id.fk->skill.skill_id",
+      "category": "foreign_key",
+      "table": "content_skill",
+      "issue_type": "CONTENT_MAPPED_TO_MISSING_SKILL",
+      "rows_checked": 284,
+      "failures": 5,
+      "status": "FAIL"
+    },
+    {
+      "check": "content_skill.role.required",
+      "category": "schema",
+      "table": "content_skill",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 284,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_skill.role.allowed",
+      "category": "schema",
+      "table": "content_skill",
+      "issue_type": "ENUM_VALUE_INVALID",
+      "rows_checked": 284,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_skill.weight.required",
+      "category": "schema",
+      "table": "content_skill",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 284,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_skill.weight.range",
+      "category": "schema",
+      "table": "content_skill",
+      "issue_type": "VALUE_OUT_OF_RANGE",
+      "rows_checked": 284,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_skill.primary_key",
+      "category": "primary_key",
+      "table": "content_skill",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 284,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learner.learner_id.required",
+      "category": "schema",
+      "table": "learner",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 150,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learner.learner_id.pattern",
+      "category": "schema",
+      "table": "learner",
+      "issue_type": "ID_FORMAT_INVALID",
+      "rows_checked": 150,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learner.learner_id.unique",
+      "category": "schema",
+      "table": "learner",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 150,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learner.handle.required",
+      "category": "schema",
+      "table": "learner",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 150,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learner.handle.unique",
+      "category": "schema",
+      "table": "learner",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 150,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learner.signup_at.required",
+      "category": "schema",
+      "table": "learner",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 150,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learner.region.required",
+      "category": "schema",
+      "table": "learner",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 150,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learner.region.allowed",
+      "category": "schema",
+      "table": "learner",
+      "issue_type": "ENUM_VALUE_INVALID",
+      "rows_checked": 150,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learner.preferred_format.required",
+      "category": "schema",
+      "table": "learner",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 150,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learner.preferred_format.allowed",
+      "category": "schema",
+      "table": "learner",
+      "issue_type": "ENUM_VALUE_INVALID",
+      "rows_checked": 150,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learner.account_status.required",
+      "category": "schema",
+      "table": "learner",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 150,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learner.account_status.allowed",
+      "category": "schema",
+      "table": "learner",
+      "issue_type": "ENUM_VALUE_INVALID",
+      "rows_checked": 150,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learner.primary_key",
+      "category": "primary_key",
+      "table": "learner",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 150,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path.path_id.required",
+      "category": "schema",
+      "table": "learning_path",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 256,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path.path_id.pattern",
+      "category": "schema",
+      "table": "learning_path",
+      "issue_type": "ID_FORMAT_INVALID",
+      "rows_checked": 256,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path.path_id.unique",
+      "category": "schema",
+      "table": "learning_path",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 256,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path.learner_id.required",
+      "category": "schema",
+      "table": "learning_path",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 256,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path.learner_id.fk->learner.learner_id",
+      "category": "foreign_key",
+      "table": "learning_path",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 256,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path.course_id.required",
+      "category": "schema",
+      "table": "learning_path",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 256,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path.course_id.fk->course.course_id",
+      "category": "foreign_key",
+      "table": "learning_path",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 256,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path.created_at.required",
+      "category": "schema",
+      "table": "learning_path",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 256,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path.current_status.required",
+      "category": "schema",
+      "table": "learning_path",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 256,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path.current_status.allowed",
+      "category": "schema",
+      "table": "learning_path",
+      "issue_type": "ENUM_VALUE_INVALID",
+      "rows_checked": 256,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path.status_updated_at.required",
+      "category": "schema",
+      "table": "learning_path",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 256,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path.primary_key",
+      "category": "primary_key",
+      "table": "learning_path",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 256,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path_event.event_id.required",
+      "category": "schema",
+      "table": "learning_path_event",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1023,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path_event.event_id.pattern",
+      "category": "schema",
+      "table": "learning_path_event",
+      "issue_type": "ID_FORMAT_INVALID",
+      "rows_checked": 1023,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path_event.event_id.unique",
+      "category": "schema",
+      "table": "learning_path_event",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 1023,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path_event.path_id.required",
+      "category": "schema",
+      "table": "learning_path_event",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1023,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path_event.path_id.fk->learning_path.path_id",
+      "category": "foreign_key",
+      "table": "learning_path_event",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 1023,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path_event.from_status.allowed",
+      "category": "schema",
+      "table": "learning_path_event",
+      "issue_type": "ENUM_VALUE_INVALID",
+      "rows_checked": 1023,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path_event.to_status.required",
+      "category": "schema",
+      "table": "learning_path_event",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1023,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path_event.to_status.allowed",
+      "category": "schema",
+      "table": "learning_path_event",
+      "issue_type": "ENUM_VALUE_INVALID",
+      "rows_checked": 1023,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path_event.event_at.required",
+      "category": "schema",
+      "table": "learning_path_event",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1023,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path_event.reason_code.required",
+      "category": "schema",
+      "table": "learning_path_event",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1023,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path_event.reason_code.allowed",
+      "category": "schema",
+      "table": "learning_path_event",
+      "issue_type": "ENUM_VALUE_INVALID",
+      "rows_checked": 1023,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path_event.primary_key",
+      "category": "primary_key",
+      "table": "learning_path_event",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 1023,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.attempt_id.required",
+      "category": "schema",
+      "table": "attempt",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 4045,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.attempt_id.pattern",
+      "category": "schema",
+      "table": "attempt",
+      "issue_type": "ID_FORMAT_INVALID",
+      "rows_checked": 4045,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.attempt_id.unique",
+      "category": "schema",
+      "table": "attempt",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 4045,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.learner_id.required",
+      "category": "schema",
+      "table": "attempt",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 4045,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.learner_id.fk->learner.learner_id",
+      "category": "foreign_key",
+      "table": "attempt",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 4045,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.content_id.required",
+      "category": "schema",
+      "table": "attempt",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 4045,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.content_id.fk->content_item.content_id",
+      "category": "foreign_key",
+      "table": "attempt",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 4045,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.path_id.required",
+      "category": "schema",
+      "table": "attempt",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 4045,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.path_id.fk->learning_path.path_id",
+      "category": "foreign_key",
+      "table": "attempt",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 4045,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.attempt_no.required",
+      "category": "schema",
+      "table": "attempt",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 4045,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.attempt_no.range",
+      "category": "schema",
+      "table": "attempt",
+      "issue_type": "VALUE_OUT_OF_RANGE",
+      "rows_checked": 4045,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.status.required",
+      "category": "schema",
+      "table": "attempt",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 4045,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.status.allowed",
+      "category": "schema",
+      "table": "attempt",
+      "issue_type": "ENUM_VALUE_INVALID",
+      "rows_checked": 4045,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.started_at.required",
+      "category": "schema",
+      "table": "attempt",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 4045,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.score.range",
+      "category": "schema",
+      "table": "attempt",
+      "issue_type": "VALUE_OUT_OF_RANGE",
+      "rows_checked": 4045,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.duration_min.required",
+      "category": "schema",
+      "table": "attempt",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 4045,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.duration_min.range",
+      "category": "schema",
+      "table": "attempt",
+      "issue_type": "VALUE_OUT_OF_RANGE",
+      "rows_checked": 4045,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.primary_key",
+      "category": "primary_key",
+      "table": "attempt",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 4045,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "assessment_result.result_id.required",
+      "category": "schema",
+      "table": "assessment_result",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 4039,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "assessment_result.result_id.pattern",
+      "category": "schema",
+      "table": "assessment_result",
+      "issue_type": "ID_FORMAT_INVALID",
+      "rows_checked": 4039,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "assessment_result.result_id.unique",
+      "category": "schema",
+      "table": "assessment_result",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 4039,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "assessment_result.attempt_id.required",
+      "category": "schema",
+      "table": "assessment_result",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 4039,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "assessment_result.attempt_id.fk->attempt.attempt_id",
+      "category": "foreign_key",
+      "table": "assessment_result",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 4039,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "assessment_result.learner_id.required",
+      "category": "schema",
+      "table": "assessment_result",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 4039,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "assessment_result.learner_id.fk->learner.learner_id",
+      "category": "foreign_key",
+      "table": "assessment_result",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 4039,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "assessment_result.skill_id.required",
+      "category": "schema",
+      "table": "assessment_result",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 4039,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "assessment_result.skill_id.fk->skill.skill_id",
+      "category": "foreign_key",
+      "table": "assessment_result",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 4039,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "assessment_result.skill_weight.required",
+      "category": "schema",
+      "table": "assessment_result",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 4039,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "assessment_result.skill_weight.range",
+      "category": "schema",
+      "table": "assessment_result",
+      "issue_type": "VALUE_OUT_OF_RANGE",
+      "rows_checked": 4039,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "assessment_result.score.required",
+      "category": "schema",
+      "table": "assessment_result",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 4039,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "assessment_result.score.range",
+      "category": "schema",
+      "table": "assessment_result",
+      "issue_type": "VALUE_OUT_OF_RANGE",
+      "rows_checked": 4039,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "assessment_result.passed.required",
+      "category": "schema",
+      "table": "assessment_result",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 4039,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "assessment_result.assessed_at.required",
+      "category": "schema",
+      "table": "assessment_result",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 4039,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "assessment_result.primary_key",
+      "category": "primary_key",
+      "table": "assessment_result",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 4039,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "mastery_snapshot.snapshot_id.required",
+      "category": "schema",
+      "table": "mastery_snapshot",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1708,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "mastery_snapshot.snapshot_id.pattern",
+      "category": "schema",
+      "table": "mastery_snapshot",
+      "issue_type": "ID_FORMAT_INVALID",
+      "rows_checked": 1708,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "mastery_snapshot.snapshot_id.unique",
+      "category": "schema",
+      "table": "mastery_snapshot",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 1708,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "mastery_snapshot.learner_id.required",
+      "category": "schema",
+      "table": "mastery_snapshot",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1708,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "mastery_snapshot.learner_id.fk->learner.learner_id",
+      "category": "foreign_key",
+      "table": "mastery_snapshot",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 1708,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "mastery_snapshot.skill_id.required",
+      "category": "schema",
+      "table": "mastery_snapshot",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1708,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "mastery_snapshot.skill_id.fk->skill.skill_id",
+      "category": "foreign_key",
+      "table": "mastery_snapshot",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 1708,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "mastery_snapshot.as_of.required",
+      "category": "schema",
+      "table": "mastery_snapshot",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1708,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "mastery_snapshot.mastery.required",
+      "category": "schema",
+      "table": "mastery_snapshot",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1708,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "mastery_snapshot.mastery.range",
+      "category": "schema",
+      "table": "mastery_snapshot",
+      "issue_type": "VALUE_OUT_OF_RANGE",
+      "rows_checked": 1708,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "mastery_snapshot.evidence_count.required",
+      "category": "schema",
+      "table": "mastery_snapshot",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1708,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "mastery_snapshot.evidence_count.range",
+      "category": "schema",
+      "table": "mastery_snapshot",
+      "issue_type": "VALUE_OUT_OF_RANGE",
+      "rows_checked": 1708,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "mastery_snapshot.method_version.required",
+      "category": "schema",
+      "table": "mastery_snapshot",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1708,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "mastery_snapshot.primary_key",
+      "category": "primary_key",
+      "table": "mastery_snapshot",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 1708,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.recommendation_id.required",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.recommendation_id.pattern",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "ID_FORMAT_INVALID",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.recommendation_id.unique",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.decision_id.required",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.decision_id.pattern",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "ID_FORMAT_INVALID",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.learner_id.required",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.learner_id.fk->learner.learner_id",
+      "category": "foreign_key",
+      "table": "recommendation",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.path_id.required",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.path_id.fk->learning_path.path_id",
+      "category": "foreign_key",
+      "table": "recommendation",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.as_of.required",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.rank.required",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.rank.range",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "VALUE_OUT_OF_RANGE",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.content_id.fk->content_item.content_id",
+      "category": "foreign_key",
+      "table": "recommendation",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.target_skill_id.fk->skill.skill_id",
+      "category": "foreign_key",
+      "table": "recommendation",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.mastery_snapshot_id.fk->mastery_snapshot.snapshot_id",
+      "category": "foreign_key",
+      "table": "recommendation",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.reason_code.required",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.reason_code.allowed",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "ENUM_VALUE_INVALID",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.rationale.required",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.predicted_success.range",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "VALUE_OUT_OF_RANGE",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.route_to.required",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.route_to.allowed",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "ENUM_VALUE_INVALID",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.engine_version.required",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.outcome.required",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "REQUIRED_FIELD_MISSING",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.outcome.allowed",
+      "category": "schema",
+      "table": "recommendation",
+      "issue_type": "ENUM_VALUE_INVALID",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.outcome_attempt_id.fk->attempt.attempt_id",
+      "category": "foreign_key",
+      "table": "recommendation",
+      "issue_type": "FOREIGN_KEY_VIOLATION",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.primary_key",
+      "category": "primary_key",
+      "table": "recommendation",
+      "issue_type": "DUPLICATE_KEY",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.completed_after_started",
+      "category": "temporal",
+      "table": "attempt",
+      "issue_type": "ATTEMPT_TIMESTAMP_ORDER_INVALID",
+      "rows_checked": 4045,
+      "failures": 3,
+      "status": "FAIL"
+    },
+    {
+      "check": "attempt.after_signup",
+      "category": "temporal",
+      "table": "attempt",
+      "issue_type": "ATTEMPT_TIMESTAMP_ORDER_INVALID",
+      "rows_checked": 4045,
+      "failures": 2,
+      "status": "FAIL"
+    },
+    {
+      "check": "attempt.after_path_created",
+      "category": "temporal",
+      "table": "attempt",
+      "issue_type": "ATTEMPT_TIMESTAMP_ORDER_INVALID",
+      "rows_checked": 4045,
+      "failures": 2,
+      "status": "FAIL"
+    },
+    {
+      "check": "attempt.counter_follows_time",
+      "category": "temporal",
+      "table": "attempt",
+      "issue_type": "ATTEMPT_TIMESTAMP_ORDER_INVALID",
+      "rows_checked": 4045,
+      "failures": 4,
+      "status": "FAIL"
+    },
+    {
+      "check": "content_item.lifecycle_dates",
+      "category": "lifecycle",
+      "table": "content_item",
+      "issue_type": "CONTENT_LIFECYCLE_INVALID",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_item.is_assessed_matches_format",
+      "category": "derived",
+      "table": "content_item",
+      "issue_type": "DERIVED_VALUE_MISMATCH",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_skill.exactly_one_primary",
+      "category": "relationship",
+      "table": "content_item",
+      "issue_type": "CONTENT_PRIMARY_SKILL_INVALID",
+      "rows_checked": 200,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "content_skill.weight_matches_role",
+      "category": "derived",
+      "table": "content_skill",
+      "issue_type": "DERIVED_VALUE_MISMATCH",
+      "rows_checked": 279,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill_prerequisite.no_self_loop_and_cross_flag",
+      "category": "relationship",
+      "table": "skill_prerequisite",
+      "issue_type": "PREREQ_GRAPH_INVALID",
+      "rows_checked": 53,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "skill_prerequisite.acyclic",
+      "category": "relationship",
+      "table": "skill_prerequisite",
+      "issue_type": "PREREQ_GRAPH_INVALID",
+      "rows_checked": 53,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.status_score_consistency",
+      "category": "lifecycle",
+      "table": "attempt",
+      "issue_type": "ATTEMPT_STATUS_INCONSISTENT",
+      "rows_checked": 4040,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.matches_path_course_and_learner",
+      "category": "relationship",
+      "table": "attempt",
+      "issue_type": "ATTEMPT_PATH_MISMATCH",
+      "rows_checked": 4040,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.content_available_when_started",
+      "category": "temporal",
+      "table": "attempt",
+      "issue_type": "ATTEMPT_CONTENT_UNAVAILABLE",
+      "rows_checked": 4040,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.attempt_no_sequence",
+      "category": "derived",
+      "table": "attempt",
+      "issue_type": "DERIVED_VALUE_MISMATCH",
+      "rows_checked": 4040,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "attempt.no_duplicates",
+      "category": "duplicate",
+      "table": "attempt",
+      "issue_type": "DUPLICATE_RECORD",
+      "rows_checked": 4040,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "assessment_result.reconciles_with_attempts",
+      "category": "reconciliation",
+      "table": "assessment_result",
+      "issue_type": "DERIVED_VALUE_MISMATCH",
+      "rows_checked": 4039,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path.created_after_signup",
+      "category": "temporal",
+      "table": "learning_path",
+      "issue_type": "PATH_BEFORE_SIGNUP",
+      "rows_checked": 256,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path.one_per_learner_course",
+      "category": "duplicate",
+      "table": "learning_path",
+      "issue_type": "DUPLICATE_RECORD",
+      "rows_checked": 256,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path_event.allowed_transition",
+      "category": "lifecycle",
+      "table": "learning_path_event",
+      "issue_type": "PATH_LIFECYCLE_INVALID",
+      "rows_checked": 1023,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path_event.reconciles_with_attempts",
+      "category": "reconciliation",
+      "table": "learning_path",
+      "issue_type": "PATH_LIFECYCLE_MISMATCH",
+      "rows_checked": 256,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path.current_status_is_latest_event",
+      "category": "reconciliation",
+      "table": "learning_path",
+      "issue_type": "PATH_LIFECYCLE_MISMATCH",
+      "rows_checked": 256,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learner.account_status_derived",
+      "category": "reconciliation",
+      "table": "learner",
+      "issue_type": "DERIVED_VALUE_MISMATCH",
+      "rows_checked": 150,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "mastery_snapshot.evidence_before_as_of",
+      "category": "temporal",
+      "table": "mastery_snapshot",
+      "issue_type": "MASTERY_USES_FUTURE_ATTEMPT",
+      "rows_checked": 1708,
+      "failures": 5,
+      "status": "FAIL"
+    },
+    {
+      "check": "mastery_snapshot.unique_learner_skill_as_of",
+      "category": "duplicate",
+      "table": "mastery_snapshot",
+      "issue_type": "DUPLICATE_RECORD",
+      "rows_checked": 1708,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "mastery_snapshot.reproducible",
+      "category": "reconciliation",
+      "table": "mastery_snapshot",
+      "issue_type": "MASTERY_RECOMPUTE_MISMATCH",
+      "rows_checked": 1703,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.reason_code_consistent",
+      "category": "business_rule",
+      "table": "recommendation",
+      "issue_type": "REC_REASON_INCONSISTENT",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.learner_matches_path",
+      "category": "relationship",
+      "table": "recommendation",
+      "issue_type": "REC_DECISION_INCONSISTENT",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.decision_consistent",
+      "category": "relationship",
+      "table": "recommendation",
+      "issue_type": "REC_DECISION_INCONSISTENT",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.snapshot_matches",
+      "category": "relationship",
+      "table": "recommendation",
+      "issue_type": "REC_DECISION_INCONSISTENT",
+      "rows_checked": 1854,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.prerequisites_respected",
+      "category": "business_rule",
+      "table": "recommendation",
+      "issue_type": "REC_VIOLATES_PREREQUISITE",
+      "rows_checked": 1854,
+      "failures": 5,
+      "status": "FAIL"
+    },
+    {
+      "check": "recommendation.content_available",
+      "category": "business_rule",
+      "table": "recommendation",
+      "issue_type": "REC_CONTENT_UNAVAILABLE",
+      "rows_checked": 1854,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.content_in_path_course",
+      "category": "business_rule",
+      "table": "recommendation",
+      "issue_type": "REC_COURSE_MISMATCH",
+      "rows_checked": 1854,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "recommendation.outcome_reconciles",
+      "category": "reconciliation",
+      "table": "recommendation",
+      "issue_type": "DERIVED_VALUE_MISMATCH",
+      "rows_checked": 1859,
+      "failures": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "learning_path.no_loop_without_progress",
+      "category": "behaviour",
+      "table": "learning_path",
+      "issue_type": "PATH_LOOP_NO_PROGRESS",
+      "rows_checked": 256,
+      "failures": 5,
+      "status": "FAIL"
+    }
+  ]
+}

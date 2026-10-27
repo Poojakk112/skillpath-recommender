@@ -1,0 +1,229 @@
+{
+  "data_profile": {
+    "learners": 1000,
+    "cold_start_learners_no_attempts": 50,
+    "attempts": 40080,
+    "attempts_per_learner_percentiles": {
+      "p10": 6.0,
+      "p50": 30.0,
+      "p90": 85.0,
+      "p99": 196.01
+    },
+    "repeated_attempt_share_pct": 42.23,
+    "abandoned_share_pct": 7.09,
+    "pass_rate_pct": 45.87,
+    "score_percentiles": {
+      "p10": 21.0,
+      "p25": 39.0,
+      "p50": 66.0,
+      "p75": 86.0,
+      "p90": 96.0
+    },
+    "attempts_by_format": {
+      "QUIZ": 22078,
+      "EXERCISE": 6395,
+      "VIDEO": 5782,
+      "PROJECT": 3477,
+      "ARTICLE": 2348
+    },
+    "content_by_status": {
+      "PUBLISHED": 380,
+      "DRAFT": 12,
+      "RETIRED": 8
+    },
+    "pass_rate_by_difficulty_pct": {
+      "1": 67.27,
+      "2": 46.01,
+      "3": 30.27,
+      "4": 25.43,
+      "5": 21.57
+    },
+    "prerequisite_gap": {
+      "scored_attempts_on_items_with_prerequisites": 20225,
+      "attempted_with_unpassed_prerequisite_pct": 48.35,
+      "pass_rate_with_gap_pct": 18.49,
+      "pass_rate_without_gap_pct": 45.59
+    },
+    "path_status": {
+      "WITHDRAWN": 1113,
+      "STALLED": 280,
+      "ACTIVE": 108,
+      "COMPLETED": 86,
+      "ENROLLED": 39
+    },
+    "learner_segments": {
+      "REGULAR": 782,
+      "LIGHT": 98,
+      "HEAVY": 70,
+      "COLD_START": 50
+    }
+  },
+  "mastery_temporal_evaluation": {
+    "cutoff": "2026-07-01T00:00:00",
+    "train_evidence_rows": 39146,
+    "test_attempts": 1030,
+    "test_attempts_with_prior_skill_evidence": 377,
+    "leakage_check": "max evidence time used < cutoff: OK",
+    "models": {
+      "mastery_model (ours)": {
+        "auc": 0.7371,
+        "brier": 0.2063
+      },
+      "difficulty_only": {
+        "auc": 0.7237,
+        "brier": 0.2155
+      },
+      "learner_average_score": {
+        "auc": 0.5479,
+        "brier": 0.276
+      },
+      "global_pass_rate": {
+        "auc": 0.5,
+        "brier": 0.2487
+      }
+    },
+    "auc_warm_vs_cold": {
+      "with_prior_evidence_on_skill": 0.7617,
+      "no_prior_evidence_on_skill": 0.784
+    },
+    "calibration": [
+      {
+        "bin": "[0.0, 0.2)",
+        "n": 102,
+        "predicted": 0.169,
+        "actual": 0.078
+      },
+      {
+        "bin": "[0.2, 0.4)",
+        "n": 209,
+        "predicted": 0.295,
+        "actual": 0.191
+      },
+      {
+        "bin": "[0.4, 0.6)",
+        "n": 517,
+        "predicted": 0.491,
+        "actual": 0.592
+      },
+      {
+        "bin": "[0.6, 0.8)",
+        "n": 156,
+        "predicted": 0.698,
+        "actual": 0.532
+      },
+      {
+        "bin": "[0.8, 1.0)",
+        "n": 46,
+        "predicted": 0.834,
+        "actual": 0.891
+      }
+    ],
+    "ground_truth_agreement": {
+      "pairs": 7836,
+      "spearman_mastery_vs_hidden_knowledge": 0.8299,
+      "spearman_when_3plus_evidence": 0.7375
+    }
+  },
+  "recommendation_evaluation": {
+    "test_decision_dates": [
+      "2026-07-01",
+      "2026-08-01",
+      "2026-09-01"
+    ],
+    "decisions": 2046,
+    "recommendations": 5631,
+    "content_recommendations": 5621,
+    "every_recommendation_has_reason_code": true,
+    "reason_codes": {
+      "NEXT_FRONTIER_SKILL": 3369,
+      "REMEDIATE_RECENT_FAIL": 1331,
+      "REMEDIATE_PREREQUISITE": 504,
+      "COLD_START_ENTRY": 203,
+      "REINFORCE_NEAR_MASTERY": 202,
+      "STRETCH_CHALLENGE": 12,
+      "ESCALATE_LOOP_NO_PROGRESS": 10
+    },
+    "exceptions_routed_to_instructor": 10,
+    "catalog_coverage_pct": 63.87,
+    "outcomes": {
+      "NOT_TAKEN": 5420,
+      "PASSED": 120,
+      "FAILED": 44,
+      "COMPLETED": 27,
+      "ABANDONED": 10,
+      "NOT_APPLICABLE": 10
+    },
+    "learner_next_attempt_was_recommended_pct": 25.93,
+    "offline_pass_rate_by_item_group": {
+      "RECOMMENDED": {
+        "attempts": 168,
+        "pass_rate_pct": 73.81
+      },
+      "ELIGIBLE_NOT_RECOMMENDED": {
+        "attempts": 196,
+        "pass_rate_pct": 67.35
+      },
+      "BLOCKED_BY_PREREQUISITE": {
+        "attempts": 287,
+        "pass_rate_pct": 24.74
+      }
+    },
+    "predicted_vs_actual_for_taken_recommendations": {
+      "n": 168,
+      "mean_predicted": 0.586,
+      "actual_pass_rate": 0.738
+    }
+  },
+  "anomaly_detection": [
+    {
+      "issue_type": "REC_VIOLATES_PREREQUISITE",
+      "injected": 10,
+      "detected": 10,
+      "true_positive": 10,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "issue_type": "ATTEMPT_TIMESTAMP_ORDER_INVALID",
+      "injected": 10,
+      "detected": 10,
+      "true_positive": 10,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "issue_type": "CONTENT_MAPPED_TO_MISSING_SKILL",
+      "injected": 10,
+      "detected": 10,
+      "true_positive": 10,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "issue_type": "MASTERY_USES_FUTURE_ATTEMPT",
+      "injected": 10,
+      "detected": 10,
+      "true_positive": 10,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    {
+      "issue_type": "PATH_LOOP_NO_PROGRESS",
+      "injected": 10,
+      "detected": 10,
+      "true_positive": 10,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  ]
+}

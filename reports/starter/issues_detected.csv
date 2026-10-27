@@ -1,0 +1,51 @@
+check,issue_type,table,record_id,detail
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000049|SKL-900001,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000064|SKL-900002,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000124|SKL-900003,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000138|SKL-900004,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000152|SKL-900005,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000247|SKL-900006,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000282|SKL-900007,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000309|SKL-900008,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000346|SKL-900009,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000381|SKL-900010,
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000501-000063,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000793-000046,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000869-000023,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000932-000034,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000999-000010,completed_at < started_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000129-000002,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000252-000008,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000327-000032,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000689-000061,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000741-000027,started_at < learner.signup_at
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010570,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010571,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010572,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010573,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010574,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010575,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010576,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010577,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010578,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010579,last_evidence_at >= as_of
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010722,SKL-000094 0.14<0.60; SKL-000095 0.11<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010725,SKL-000004 0.57<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010728,SKL-000054 0.53<0.60; SKL-000058 0.31<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010731,SKL-000029 0.27<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010723,SKL-000022 0.50<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010726,SKL-000014 0.56<0.60; SKL-000016 0.52<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010729,SKL-000004 0.47<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010724,SKL-000067 0.28<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010727,SKL-000031 0.57<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010730,SKL-000040 0.30<0.60
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-000442,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-000541,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-000587,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-001022,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-001305,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-001323,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-001358,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-001385,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-001471,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-001518,"8 attempts on <= 2 items, no pass, no gain"

@@ -1,0 +1,60 @@
+{
+  "dataset": "skillpath synthetic learning-activity dataset",
+  "generator_version": "1.0.0",
+  "engine_version": "rules-v1",
+  "mastery_method": "recency-weighted-bayes-v1",
+  "seed": 20261022,
+  "scale": {
+    "name": "tiny",
+    "learners": 150,
+    "courses": 5,
+    "skills_per_course": 10,
+    "content_per_course": 40,
+    "attempts": 4000,
+    "anomalies_per_type": 5,
+    "skills": 50,
+    "content_items": 200
+  },
+  "time_window": [
+    "2025-01-01T00:00:00",
+    "2026-09-30T23:59:00"
+  ],
+  "temporal_split_cutoff": "2026-07-01T00:00:00",
+  "generator_command": "python -m skillpath run --scale tiny --seed 20261022",
+  "provenance": {
+    "external_data_used": false,
+    "statement": "All records are synthetic, produced by this repository's code from a fixed seed. No personal, confidential or third-party data was collected or used."
+  },
+  "row_counts": {
+    "course": 5,
+    "skill": 50,
+    "skill_prerequisite": 53,
+    "content_item": 200,
+    "content_skill": 284,
+    "learner": 150,
+    "learning_path": 256,
+    "attempt": 4045,
+    "assessment_result": 4039,
+    "learning_path_event": 1023,
+    "recommendation": 1859,
+    "mastery_snapshot": 1708,
+    "ground_truth/anomalies": 25
+  },
+  "sha256": {
+    "tables/course.csv": "48803c6931aaab2a7f95f81254791e5a26327cdf083e52847e0bb50dbd12dca8",
+    "tables/skill.csv": "5327eae48c3942ff47a91a47e8a3507ac6ce56f173dce6f85b153099f47ac4b6",
+    "tables/skill_prerequisite.csv": "b43f257c4d3183f3fa0c617bd69cb595c1a76c54ea7dbb9babbc3553e532ff85",
+    "tables/content_item.csv": "9cde2429491fbd3f914341d4143afd9b3d43db88260b58f7c1d8ffa0431e309a",
+    "tables/content_skill.csv": "534473010e80dc88f3b97e24457d8708fda55c06fd5e85a9a3e40c573ce1ad30",
+    "tables/learner.csv": "1e79144057d431d2d2d701832b0a0a5ee7030e98abc330692c1385d07b612793",
+    "tables/learning_path.csv": "5557137ee89bd3666d5bb380a63c9fee99767c37d796899156556a2876089574",
+    "tables/learning_path_event.csv": "fd2fa4a3785c6fe276206754cd942c5cdd7ec9063952d8f2aabf03b04ad9aaff",
+    "tables/attempt.csv": "f71cfdaa1bedfff16fdc5bc1e2127ed23c04195f27561c57009980ff3c9eafb7",
+    "tables/assessment_result.csv": "774bd4243115e2f38f661969053a427428e3f68d55dfd626ed09760c44ce3b8a",
+    "tables/mastery_snapshot.csv": "9583758ffb8ca8574cd00d82552e339bc385eade630328e10e0295de4a49d49a",
+    "tables/recommendation.csv": "c2a6356bbaa69216b8c84eaee9670e4b36daee0633f01b3a63ce92e9e1307855",
+    "ground_truth/anomalies.csv": "d6ff25abf78e235b8c82471da1730c6029092055a444371e58a09f0abbbfced7",
+    "ground_truth/learner_truth.csv": "5fc2c2f926eadd904a5cf6984ce87b3afc113a1bb5dadcddbe2f2973f99dfe6b",
+    "ground_truth/latent_skill_state.csv": "ea1871eeb8d94643db8a8ddce1b41511e663ab08a0abddcf04dc59e01ea72d74"
+  }
+}

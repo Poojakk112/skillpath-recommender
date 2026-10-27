@@ -3,5 +3,6 @@ __pycache__/
 .pytest_cache/
 *.db
 data/full/
-data/*/json/
+data/starter/json/
+data/starter/seed.sql
 .venv/

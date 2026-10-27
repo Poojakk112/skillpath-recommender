@@ -1,0 +1,956 @@
+{
+  "course": {
+    "entity": "Course",
+    "description": "A course groups related skills and content.",
+    "primary_key": [
+      "course_id"
+    ],
+    "rules": [],
+    "fields": [
+      {
+        "name": "course_id",
+        "type": "string",
+        "required": true,
+        "description": "Course ID",
+        "unique": true,
+        "pattern": "^CRS-\\d{6}$"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "description": "Course title",
+        "unique": true
+      },
+      {
+        "name": "domain",
+        "type": "string",
+        "required": true,
+        "description": "Subject domain",
+        "allowed": [
+          "PROGRAMMING",
+          "DATA",
+          "CLOUD",
+          "SECURITY",
+          "DESIGN"
+        ],
+        "unique": false
+      },
+      {
+        "name": "level",
+        "type": "string",
+        "required": true,
+        "description": "Difficulty band of the course",
+        "allowed": [
+          "BEGINNER",
+          "INTERMEDIATE",
+          "ADVANCED"
+        ],
+        "unique": false
+      },
+      {
+        "name": "launched_at",
+        "type": "datetime",
+        "required": true,
+        "description": "When the course went live",
+        "unique": false
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "required": true,
+        "description": "Lifecycle state",
+        "allowed": [
+          "ACTIVE",
+          "ARCHIVED"
+        ],
+        "unique": false
+      }
+    ]
+  },
+  "skill": {
+    "entity": "Skill",
+    "description": "A unit of competence. Each skill belongs to exactly one course.",
+    "primary_key": [
+      "skill_id"
+    ],
+    "rules": [],
+    "fields": [
+      {
+        "name": "skill_id",
+        "type": "string",
+        "required": true,
+        "description": "Skill ID",
+        "unique": true,
+        "pattern": "^SKL-\\d{6}$"
+      },
+      {
+        "name": "course_id",
+        "type": "string",
+        "required": true,
+        "description": "Owning course",
+        "unique": false,
+        "fk": "course.course_id"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": true,
+        "description": "Skill name",
+        "unique": true
+      },
+      {
+        "name": "level",
+        "type": "integer",
+        "required": true,
+        "description": "Depth of the skill inside its course (1 = entry)",
+        "unique": false,
+        "min": 1,
+        "max": 4
+      }
+    ]
+  },
+  "skill_prerequisite": {
+    "entity": "SkillPrerequisite",
+    "description": "Bridge table forming the skill graph (N:M self relation on Skill). A row means: skill_id requires prerequisite_skill_id at mastery >= min_mastery.",
+    "primary_key": [
+      "skill_id",
+      "prerequisite_skill_id"
+    ],
+    "rules": [
+      "The prerequisite graph must be acyclic (checked with Kahn's algorithm)."
+    ],
+    "fields": [
+      {
+        "name": "skill_id",
+        "type": "string",
+        "required": true,
+        "description": "Dependent skill",
+        "unique": false,
+        "fk": "skill.skill_id"
+      },
+      {
+        "name": "prerequisite_skill_id",
+        "type": "string",
+        "required": true,
+        "description": "Required skill",
+        "unique": false,
+        "fk": "skill.skill_id",
+        "rule": "!= skill_id"
+      },
+      {
+        "name": "min_mastery",
+        "type": "float",
+        "required": true,
+        "description": "Mastery needed on the prerequisite",
+        "unique": false,
+        "min": 0,
+        "max": 1
+      },
+      {
+        "name": "effective_from",
+        "type": "datetime",
+        "required": true,
+        "description": "Rule applies to decisions on/after this time",
+        "unique": false
+      },
+      {
+        "name": "is_cross_course",
+        "type": "boolean",
+        "required": true,
+        "description": "True when the prerequisite lives in another course",
+        "unique": false,
+        "rule": "== (course of prerequisite != course of skill)"
+      }
+    ]
+  },
+  "content_item": {
+    "entity": "ContentItem",
+    "description": "A learning activity: video, article, quiz, exercise or project.",
+    "primary_key": [
+      "content_id"
+    ],
+    "rules": [],
+    "fields": [
+      {
+        "name": "content_id",
+        "type": "string",
+        "required": true,
+        "description": "Content ID",
+        "unique": true,
+        "pattern": "^CNT-\\d{6}$"
+      },
+      {
+        "name": "course_id",
+        "type": "string",
+        "required": true,
+        "description": "Owning course",
+        "unique": false,
+        "fk": "course.course_id"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "description": "Content title",
+        "unique": false
+      },
+      {
+        "name": "format",
+        "type": "string",
+        "required": true,
+        "description": "Content format",
+        "allowed": [
+          "VIDEO",
+          "ARTICLE",
+          "QUIZ",
+          "EXERCISE",
+          "PROJECT"
+        ],
+        "unique": false
+      },
+      {
+        "name": "difficulty",
+        "type": "integer",
+        "required": true,
+        "description": "Difficulty 1 (easy) .. 5 (hard)",
+        "unique": false,
+        "min": 1,
+        "max": 5
+      },
+      {
+        "name": "duration_min",
+        "type": "integer",
+        "required": true,
+        "description": "Expected time to finish",
+        "unit": "minutes",
+        "unique": false,
+        "min": 1
+      },
+      {
+        "name": "is_assessed",
+        "type": "boolean",
+        "required": true,
+        "description": "Produces a score",
+        "unique": false,
+        "rule": "== format in (QUIZ, EXERCISE, PROJECT)"
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "required": true,
+        "description": "Lifecycle state",
+        "allowed": [
+          "DRAFT",
+          "PUBLISHED",
+          "RETIRED"
+        ],
+        "unique": false
+      },
+      {
+        "name": "published_at",
+        "type": "datetime",
+        "required": false,
+        "description": "When it became available",
+        "unique": false,
+        "rule": "null iff status = DRAFT"
+      },
+      {
+        "name": "retired_at",
+        "type": "datetime",
+        "required": false,
+        "description": "When it stopped being available",
+        "unique": false,
+        "rule": "not null iff status = RETIRED; > published_at"
+      }
+    ]
+  },
+  "content_skill": {
+    "entity": "ContentSkill",
+    "description": "Bridge table mapping content to skills (N:M). Exactly one PRIMARY skill per content item.",
+    "primary_key": [
+      "content_id",
+      "skill_id"
+    ],
+    "rules": [],
+    "fields": [
+      {
+        "name": "content_id",
+        "type": "string",
+        "required": true,
+        "description": "Content item",
+        "unique": false,
+        "fk": "content_item.content_id"
+      },
+      {
+        "name": "skill_id",
+        "type": "string",
+        "required": true,
+        "description": "Skill taught/assessed",
+        "unique": false,
+        "fk": "skill.skill_id"
+      },
+      {
+        "name": "role",
+        "type": "string",
+        "required": true,
+        "description": "PRIMARY or SECONDARY",
+        "allowed": [
+          "PRIMARY",
+          "SECONDARY"
+        ],
+        "unique": false
+      },
+      {
+        "name": "weight",
+        "type": "float",
+        "required": true,
+        "description": "Evidence weight (PRIMARY 1.0, SECONDARY 0.5)",
+        "unique": false,
+        "min": 0,
+        "max": 1
+      }
+    ]
+  },
+  "learner": {
+    "entity": "Learner",
+    "description": "A pseudonymous learner account (no personal data).",
+    "primary_key": [
+      "learner_id"
+    ],
+    "rules": [],
+    "fields": [
+      {
+        "name": "learner_id",
+        "type": "string",
+        "required": true,
+        "description": "Learner ID",
+        "unique": true,
+        "pattern": "^LRN-\\d{6}$"
+      },
+      {
+        "name": "handle",
+        "type": "string",
+        "required": true,
+        "description": "Pseudonymous display handle",
+        "unique": true
+      },
+      {
+        "name": "signup_at",
+        "type": "datetime",
+        "required": true,
+        "description": "Account creation time",
+        "unique": false
+      },
+      {
+        "name": "region",
+        "type": "string",
+        "required": true,
+        "description": "Coarse region code",
+        "allowed": [
+          "IN-KA",
+          "IN-MH",
+          "IN-TN",
+          "IN-TS",
+          "IN-DL",
+          "IN-WB"
+        ],
+        "unique": false
+      },
+      {
+        "name": "preferred_format",
+        "type": "string",
+        "required": true,
+        "description": "Self-declared favourite format",
+        "allowed": [
+          "VIDEO",
+          "ARTICLE",
+          "QUIZ",
+          "EXERCISE",
+          "PROJECT"
+        ],
+        "unique": false
+      },
+      {
+        "name": "account_status",
+        "type": "string",
+        "required": true,
+        "description": "Derived from attempts",
+        "allowed": [
+          "NEW",
+          "ACTIVE",
+          "DORMANT"
+        ],
+        "unique": false,
+        "rule": "NEW if no attempts; ACTIVE if last attempt within 90 days of window end; else DORMANT"
+      }
+    ]
+  },
+  "learning_path": {
+    "entity": "LearningPath",
+    "description": "A learner's enrolment in one course. Current state is derived from learning_path_event (history is never overwritten).",
+    "primary_key": [
+      "path_id"
+    ],
+    "rules": [
+      "(learner_id, course_id) is unique."
+    ],
+    "fields": [
+      {
+        "name": "path_id",
+        "type": "string",
+        "required": true,
+        "description": "Path ID",
+        "unique": true,
+        "pattern": "^PATH-\\d{4}-\\d{6}$"
+      },
+      {
+        "name": "learner_id",
+        "type": "string",
+        "required": true,
+        "description": "Learner",
+        "unique": false,
+        "fk": "learner.learner_id"
+      },
+      {
+        "name": "course_id",
+        "type": "string",
+        "required": true,
+        "description": "Course",
+        "unique": false,
+        "fk": "course.course_id"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime",
+        "required": true,
+        "description": "Enrolment time",
+        "unique": false,
+        "rule": ">= learner.signup_at"
+      },
+      {
+        "name": "current_status",
+        "type": "string",
+        "required": true,
+        "description": "Latest status",
+        "allowed": [
+          "ENROLLED",
+          "ACTIVE",
+          "STALLED",
+          "COMPLETED",
+          "WITHDRAWN"
+        ],
+        "unique": false,
+        "rule": "== to_status of the latest learning_path_event"
+      },
+      {
+        "name": "status_updated_at",
+        "type": "datetime",
+        "required": true,
+        "description": "Time of latest event",
+        "unique": false
+      },
+      {
+        "name": "completed_at",
+        "type": "datetime",
+        "required": false,
+        "description": "Completion time",
+        "unique": false,
+        "rule": "not null iff COMPLETED"
+      }
+    ]
+  },
+  "learning_path_event": {
+    "entity": "LearningPathEvent",
+    "description": "Append-only status history of a learning path.",
+    "primary_key": [
+      "event_id"
+    ],
+    "rules": [
+      "(from_status, to_status) must be an allowed transition.",
+      "Events of a path are re-derived from attempts and must match exactly."
+    ],
+    "fields": [
+      {
+        "name": "event_id",
+        "type": "string",
+        "required": true,
+        "description": "Event ID",
+        "unique": true,
+        "pattern": "^PEV-\\d{8}$"
+      },
+      {
+        "name": "path_id",
+        "type": "string",
+        "required": true,
+        "description": "Path",
+        "unique": false,
+        "fk": "learning_path.path_id"
+      },
+      {
+        "name": "from_status",
+        "type": "string",
+        "required": false,
+        "description": "Status before (null for the first event)",
+        "allowed": [
+          "ENROLLED",
+          "ACTIVE",
+          "STALLED",
+          "COMPLETED",
+          "WITHDRAWN"
+        ],
+        "unique": false
+      },
+      {
+        "name": "to_status",
+        "type": "string",
+        "required": true,
+        "description": "Status after",
+        "allowed": [
+          "ENROLLED",
+          "ACTIVE",
+          "STALLED",
+          "COMPLETED",
+          "WITHDRAWN"
+        ],
+        "unique": false
+      },
+      {
+        "name": "event_at",
+        "type": "datetime",
+        "required": true,
+        "description": "When the change happened",
+        "unique": false
+      },
+      {
+        "name": "reason_code",
+        "type": "string",
+        "required": true,
+        "description": "Why it changed",
+        "allowed": [
+          "ENROLLED",
+          "FIRST_ACTIVITY",
+          "INACTIVITY_60D",
+          "RESUMED",
+          "ALL_SKILLS_PASSED",
+          "NO_RETURN_AFTER_STALL"
+        ],
+        "unique": false
+      }
+    ]
+  },
+  "attempt": {
+    "entity": "Attempt",
+    "description": "One learner interaction with one content item.",
+    "primary_key": [
+      "attempt_id"
+    ],
+    "rules": [],
+    "fields": [
+      {
+        "name": "attempt_id",
+        "type": "string",
+        "required": true,
+        "description": "ATT-<learner-id>-<n>, n follows the learner's chronology",
+        "unique": true,
+        "pattern": "^ATT-LRN-\\d{6}-\\d{6}$"
+      },
+      {
+        "name": "learner_id",
+        "type": "string",
+        "required": true,
+        "description": "Learner",
+        "unique": false,
+        "fk": "learner.learner_id"
+      },
+      {
+        "name": "content_id",
+        "type": "string",
+        "required": true,
+        "description": "Content attempted",
+        "unique": false,
+        "fk": "content_item.content_id"
+      },
+      {
+        "name": "path_id",
+        "type": "string",
+        "required": true,
+        "description": "Learning path the attempt belongs to",
+        "unique": false,
+        "fk": "learning_path.path_id",
+        "rule": "path course == content course"
+      },
+      {
+        "name": "attempt_no",
+        "type": "integer",
+        "required": true,
+        "description": "n-th attempt of this learner on this content",
+        "unique": false,
+        "min": 1
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "required": true,
+        "description": "COMPLETED or ABANDONED",
+        "allowed": [
+          "COMPLETED",
+          "ABANDONED"
+        ],
+        "unique": false
+      },
+      {
+        "name": "started_at",
+        "type": "datetime",
+        "required": true,
+        "description": "Start time",
+        "unique": false,
+        "rule": ">= learner.signup_at and path.created_at"
+      },
+      {
+        "name": "completed_at",
+        "type": "datetime",
+        "required": false,
+        "description": "End time",
+        "unique": false,
+        "rule": "null iff ABANDONED; >= started_at"
+      },
+      {
+        "name": "score",
+        "type": "integer",
+        "required": false,
+        "description": "Score for assessed content",
+        "unit": "points",
+        "unique": false,
+        "min": 0,
+        "max": 100,
+        "rule": "not null iff COMPLETED and content is assessed"
+      },
+      {
+        "name": "duration_min",
+        "type": "integer",
+        "required": true,
+        "description": "Time spent",
+        "unit": "minutes",
+        "unique": false,
+        "min": 1
+      }
+    ]
+  },
+  "assessment_result": {
+    "entity": "AssessmentResult",
+    "description": "Per-skill evidence derived from a completed assessed attempt (1 attempt : 1..2 results).",
+    "primary_key": [
+      "result_id"
+    ],
+    "rules": [],
+    "fields": [
+      {
+        "name": "result_id",
+        "type": "string",
+        "required": true,
+        "description": "<attempt-id with ASR prefix>-<1 primary | 2 secondary>",
+        "unique": true,
+        "pattern": "^ASR-LRN-\\d{6}-\\d{6}-[12]$"
+      },
+      {
+        "name": "attempt_id",
+        "type": "string",
+        "required": true,
+        "description": "Source attempt",
+        "unique": false,
+        "fk": "attempt.attempt_id"
+      },
+      {
+        "name": "learner_id",
+        "type": "string",
+        "required": true,
+        "description": "Learner (== attempt learner)",
+        "unique": false,
+        "fk": "learner.learner_id"
+      },
+      {
+        "name": "skill_id",
+        "type": "string",
+        "required": true,
+        "description": "Skill evidenced",
+        "unique": false,
+        "fk": "skill.skill_id"
+      },
+      {
+        "name": "skill_weight",
+        "type": "float",
+        "required": true,
+        "description": "Weight copied from content_skill",
+        "unique": false,
+        "min": 0,
+        "max": 1
+      },
+      {
+        "name": "score",
+        "type": "integer",
+        "required": true,
+        "description": "== attempt.score",
+        "unit": "points",
+        "unique": false,
+        "min": 0,
+        "max": 100
+      },
+      {
+        "name": "passed",
+        "type": "boolean",
+        "required": true,
+        "description": "score >= 70",
+        "unique": false
+      },
+      {
+        "name": "assessed_at",
+        "type": "datetime",
+        "required": true,
+        "description": "== attempt.completed_at",
+        "unique": false
+      }
+    ]
+  },
+  "mastery_snapshot": {
+    "entity": "MasterySnapshot",
+    "description": "Mastery estimate used by a recommendation decision, stored for traceability.",
+    "primary_key": [
+      "snapshot_id"
+    ],
+    "rules": [
+      "(learner_id, skill_id, as_of) is unique."
+    ],
+    "fields": [
+      {
+        "name": "snapshot_id",
+        "type": "string",
+        "required": true,
+        "description": "Snapshot ID",
+        "unique": true,
+        "pattern": "^MSN-\\d{8}$"
+      },
+      {
+        "name": "learner_id",
+        "type": "string",
+        "required": true,
+        "description": "Learner",
+        "unique": false,
+        "fk": "learner.learner_id"
+      },
+      {
+        "name": "skill_id",
+        "type": "string",
+        "required": true,
+        "description": "Skill",
+        "unique": false,
+        "fk": "skill.skill_id"
+      },
+      {
+        "name": "as_of",
+        "type": "datetime",
+        "required": true,
+        "description": "Decision time; only evidence strictly before it may be used",
+        "unique": false
+      },
+      {
+        "name": "mastery",
+        "type": "float",
+        "required": true,
+        "description": "Recency-weighted mastery estimate",
+        "unique": false,
+        "min": 0,
+        "max": 1,
+        "rule": "== recomputation from assessment_result before as_of"
+      },
+      {
+        "name": "evidence_count",
+        "type": "integer",
+        "required": true,
+        "description": "Results used",
+        "unique": false,
+        "min": 0
+      },
+      {
+        "name": "last_evidence_at",
+        "type": "datetime",
+        "required": false,
+        "description": "Newest evidence used",
+        "unique": false,
+        "rule": "< as_of"
+      },
+      {
+        "name": "method_version",
+        "type": "string",
+        "required": true,
+        "description": "Mastery method version",
+        "unique": false
+      }
+    ]
+  },
+  "recommendation": {
+    "entity": "Recommendation",
+    "description": "Ranked next-activity recommendations (or an exception routed to an instructor) per decision.",
+    "primary_key": [
+      "recommendation_id"
+    ],
+    "rules": [],
+    "fields": [
+      {
+        "name": "recommendation_id",
+        "type": "string",
+        "required": true,
+        "description": "Recommendation ID",
+        "unique": true,
+        "pattern": "^REC-\\d{8}$"
+      },
+      {
+        "name": "decision_id",
+        "type": "string",
+        "required": true,
+        "description": "Groups the ranked items of one decision",
+        "unique": false,
+        "pattern": "^DEC-\\d{8}$"
+      },
+      {
+        "name": "learner_id",
+        "type": "string",
+        "required": true,
+        "description": "Learner",
+        "unique": false,
+        "fk": "learner.learner_id"
+      },
+      {
+        "name": "path_id",
+        "type": "string",
+        "required": true,
+        "description": "Path the decision was made for",
+        "unique": false,
+        "fk": "learning_path.path_id"
+      },
+      {
+        "name": "as_of",
+        "type": "datetime",
+        "required": true,
+        "description": "Decision time",
+        "unique": false
+      },
+      {
+        "name": "rank",
+        "type": "integer",
+        "required": true,
+        "description": "1 = best",
+        "unique": false,
+        "min": 1,
+        "max": 3
+      },
+      {
+        "name": "content_id",
+        "type": "string",
+        "required": false,
+        "description": "Recommended item (null for exceptions)",
+        "unique": false,
+        "fk": "content_item.content_id",
+        "rule": "all prerequisites met at as_of"
+      },
+      {
+        "name": "target_skill_id",
+        "type": "string",
+        "required": false,
+        "description": "Skill the item works on / blocking skill",
+        "unique": false,
+        "fk": "skill.skill_id"
+      },
+      {
+        "name": "mastery_snapshot_id",
+        "type": "string",
+        "required": false,
+        "description": "Mastery of target skill at decision time",
+        "unique": false,
+        "fk": "mastery_snapshot.snapshot_id"
+      },
+      {
+        "name": "reason_code",
+        "type": "string",
+        "required": true,
+        "description": "Why it was recommended",
+        "allowed": [
+          "COLD_START_ENTRY",
+          "NEXT_FRONTIER_SKILL",
+          "REINFORCE_NEAR_MASTERY",
+          "REMEDIATE_RECENT_FAIL",
+          "STRETCH_CHALLENGE",
+          "REMEDIATE_PREREQUISITE",
+          "ESCALATE_NO_ELIGIBLE_CONTENT",
+          "ESCALATE_LOOP_NO_PROGRESS",
+          "ESCALATE_NO_REMAINING_CONTENT"
+        ],
+        "unique": false
+      },
+      {
+        "name": "rationale",
+        "type": "string",
+        "required": true,
+        "description": "Human-readable explanation",
+        "unique": false
+      },
+      {
+        "name": "predicted_success",
+        "type": "float",
+        "required": false,
+        "description": "Estimated pass probability",
+        "unique": false,
+        "min": 0,
+        "max": 1
+      },
+      {
+        "name": "route_to",
+        "type": "string",
+        "required": true,
+        "description": "Who acts on it",
+        "allowed": [
+          "LEARNER",
+          "INSTRUCTOR"
+        ],
+        "unique": false
+      },
+      {
+        "name": "engine_version",
+        "type": "string",
+        "required": true,
+        "description": "Recommender version",
+        "unique": false
+      },
+      {
+        "name": "outcome",
+        "type": "string",
+        "required": true,
+        "description": "What happened within 30 days",
+        "allowed": [
+          "PASSED",
+          "FAILED",
+          "COMPLETED",
+          "ABANDONED",
+          "NOT_TAKEN",
+          "NOT_APPLICABLE"
+        ],
+        "unique": false
+      },
+      {
+        "name": "outcome_attempt_id",
+        "type": "string",
+        "required": false,
+        "description": "Attempt that produced the outcome",
+        "unique": false,
+        "fk": "attempt.attempt_id"
+      },
+      {
+        "name": "outcome_at",
+        "type": "datetime",
+        "required": false,
+        "description": "Start of that attempt",
+        "unique": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+check,issue_type,table,record_id,detail
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000025|SKL-900001,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000033|SKL-900002,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000076|SKL-900003,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000142|SKL-900004,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000192|SKL-900005,
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000066-000005,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000080-000013,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000127-000016,completed_at < started_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000053-000047,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000124-000012,started_at < learner.signup_at
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00001704,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00001705,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00001706,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00001707,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00001708,last_evidence_at >= as_of
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00001855,SKL-000041 0.42<0.60; SKL-000042 0.39<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00001858,SKL-000022 0.51<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00001856,SKL-000021 0.51<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00001859,SKL-000002 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00001857,SKL-000041 0.38<0.60; SKL-000042 0.35<0.60
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-000105,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-000120,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-000201,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-000203,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-000215,"8 attempts on <= 2 items, no pass, no gain"
