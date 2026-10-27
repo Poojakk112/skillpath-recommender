@@ -7,7 +7,8 @@ For one learner, one learning path and one decision time `as_of`:
 2. Candidates = items of the path's course that are available at `as_of` and
    not yet done (assessed: passed; unassessed: completed).
 3. Hard gate: an item is ELIGIBLE only if every prerequisite of every skill it
-   maps to has mastery >= min_mastery, using evidence strictly before `as_of`.
+   covers (primary and secondary) has mastery >= min_mastery, using evidence
+   strictly before `as_of`.
 4. Rank eligible items with a transparent utility (need, difficulty fit,
    syllabus frontier, evidence value, format preference) and attach a reason code.
 5. If nothing is eligible, walk the prerequisite graph to the nearest
@@ -71,13 +72,14 @@ class Context:
             if role == "PRIMARY":
                 self.primary[c] = s
 
-        # required prerequisites per item = prerequisites of its skills it does not teach itself
+        # required prerequisites per item = every prerequisite of every skill the item covers
+        # (also when the item itself touches that prerequisite as a secondary skill)
         self.required: dict[str, list] = {}
         for c, skills_of_c in self.mapped.items():
             req = {}
             for s in skills_of_c:
                 for p, mm, eff in self.prereqs.get(s, ()):
-                    if p not in skills_of_c:
+                    if p != s:
                         old = req.get(p)
                         req[p] = (max(mm, old[0]), min(eff, old[1])) if old else (mm, eff)
             self.required[c] = sorted((p, mm, eff) for p, (mm, eff) in req.items())

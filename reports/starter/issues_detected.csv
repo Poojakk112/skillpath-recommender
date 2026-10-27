@@ -19,26 +19,26 @@ attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000252-0000
 attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000327-000032,started_at < learner.signup_at
 attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000689-000061,started_at < learner.signup_at
 attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000741-000027,started_at < learner.signup_at
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010570,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010571,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010572,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010573,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010574,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010575,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010576,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010577,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010578,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010579,last_evidence_at >= as_of
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010722,SKL-000094 0.14<0.60; SKL-000095 0.11<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010725,SKL-000004 0.57<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010728,SKL-000054 0.53<0.60; SKL-000058 0.31<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010731,SKL-000029 0.27<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010723,SKL-000022 0.50<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010726,SKL-000014 0.56<0.60; SKL-000016 0.52<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010729,SKL-000004 0.47<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010724,SKL-000067 0.28<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010727,SKL-000031 0.57<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010730,SKL-000040 0.30<0.60
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010107,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010108,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010109,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010110,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010111,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010112,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010113,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010114,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010115,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00010116,last_evidence_at >= as_of
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010434,SKL-000094 0.14<0.60; SKL-000095 0.11<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010437,SKL-000004 0.57<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010440,SKL-000054 0.53<0.60; SKL-000056 0.31<0.60; SKL-000058 0.31<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010443,SKL-000029 0.27<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010435,SKL-000022 0.50<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010438,SKL-000014 0.56<0.60; SKL-000016 0.52<0.60; SKL-000018 0.58<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010441,SKL-000004 0.47<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010436,SKL-000067 0.28<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010439,SKL-000031 0.57<0.60; SKL-000032 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00010442,SKL-000040 0.30<0.60
 learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-000442,"8 attempts on <= 2 items, no pass, no gain"
 learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-000541,"8 attempts on <= 2 items, no pass, no gain"
 learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-000587,"8 attempts on <= 2 items, no pass, no gain"

@@ -118,7 +118,7 @@ snapshot and requires a match within 1e-6.
 |---|---|
 | 1. Exception | last 8 completed attempts in the path cycle over ≤ 2 items, none passed, best score of the second half ≤ first half → `ESCALATE_LOOP_NO_PROGRESS` to an instructor |
 | 2. Candidates | items of the path's course that are published (not draft/retired) at `as_of` and not already done |
-| 3. **Hard gate** | every prerequisite of every mapped skill has mastery ≥ 0.60 (evidence strictly before `as_of`) |
+| 3. **Hard gate** | every prerequisite of every skill the item covers (primary and secondary) has mastery ≥ 0.60 (evidence strictly before `as_of`) — even if the item itself also touches that prerequisite |
 | 4. Rank | `0.45·(1−mastery) + 0.30·difficulty_fit + 0.15·frontier + 0.05·assessed + 0.05·preferred_format (+0.10 easier retry after a fail)`; max 2 items per skill; top 3 |
 | 5. Reason code | `COLD_START_ENTRY`, `REMEDIATE_RECENT_FAIL`, `STRETCH_CHALLENGE`, `REINFORCE_NEAR_MASTERY`, `NEXT_FRONTIER_SKILL` |
 | 6. Nothing eligible | breadth-first walk down the prerequisite graph to the nearest skill the learner *can* work on → `REMEDIATE_PREREQUISITE` (may be in another course) |

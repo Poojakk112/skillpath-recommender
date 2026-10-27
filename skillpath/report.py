@@ -5,33 +5,51 @@ import html
 import json
 
 CSS = """
-:root{color-scheme:light;--surface:#fcfcfb;--panel:#ffffff;--border:#e4e3df;--text:#0b0b0b;
---muted:#52514e;--series:#2a78d6;--track:#efeee9;--good:#008300;--bad:#c62f2e}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--surface:#1a1a19;
---panel:#232322;--border:#3a3a38;--text:#f0efec;--muted:#c3c2b7;--series:#3987e5;--track:#2e2e2c;
---good:#3fb950;--bad:#e66767}}
-:root[data-theme="dark"]{color-scheme:dark;--surface:#1a1a19;--panel:#232322;--border:#3a3a38;
---text:#f0efec;--muted:#c3c2b7;--series:#3987e5;--track:#2e2e2c;--good:#3fb950;--bad:#e66767}
-*{box-sizing:border-box}body{margin:0;background:var(--surface);color:var(--text);
-font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:980px;margin:0 auto;padding:32px 16px 64px}
-h1{font-size:28px;margin:0 0 4px}h2{font-size:20px;margin:40px 0 8px}h3{font-size:15px;margin:20px 0 8px}
-p.lead,.muted{color:var(--muted)}
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
-.tile{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px}
-.tile b{display:block;font-size:26px;font-variant-numeric:tabular-nums}.tile span{color:var(--muted);font-size:13px}
-table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--border);
-border-radius:10px;overflow:hidden;font-size:14px;margin:8px 0}
-th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--border)}th{color:var(--muted);font-weight:600}
+:root{color-scheme:light;--paper:#f4f7fb;--grid:#e3eaf3;--panel:#ffffff;--ink:#15233b;--muted:#4d5d75;
+--faint:#8593a8;--border:#d6dfea;--series:#2a78d6;--track:#e8eef6;--good:#1f7a3d;--bad:#c7362f;
+--shadow:0 1px 2px rgba(21,35,59,.06),0 4px 14px rgba(21,35,59,.06)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--paper:#0e1624;--grid:#172235;
+--panel:#152033;--ink:#e6edf7;--muted:#aebbd0;--faint:#7b8aa3;--border:#26354d;--series:#4b93ea;--track:#22314a;
+--good:#4cc173;--bad:#ef6b63;--shadow:none}}
+:root[data-theme="dark"]{color-scheme:dark;--paper:#0e1624;--grid:#172235;--panel:#152033;--ink:#e6edf7;
+--muted:#aebbd0;--faint:#7b8aa3;--border:#26354d;--series:#4b93ea;--track:#22314a;--good:#4cc173;--bad:#ef6b63;--shadow:none}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font:15px/1.6 "Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+background-color:var(--paper);background-image:linear-gradient(var(--grid) 1px,transparent 1px),
+linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px}
+main{max-width:960px;margin:0 auto;padding:36px 16px 72px}
+h1,h2,h3{font-family:Sora,"Public Sans",system-ui,sans-serif;letter-spacing:-.01em}
+h1{font-size:34px;line-height:1.15;margin:0 0 10px;max-width:22ch}
+h2{font-size:21px;margin:0 0 6px}h3{font-size:15px;margin:22px 0 8px}
+p{max-width:75ch}.muted{color:var(--muted)}
+a{color:var(--series)}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:center;margin:8px 0 22px}
+@media (max-width:760px){.hero{grid-template-columns:minmax(0,1fr)}}
+.hero .lead{font-size:17px;color:var(--muted);margin:0 0 14px}
+.cta{display:inline-block;background:var(--series);color:#fff;text-decoration:none;font-weight:600;
+padding:9px 16px;border-radius:9px}
+.cta:focus-visible,a:focus-visible{outline:3px solid var(--series);outline-offset:2px}
+.big{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:var(--shadow)}
+.big .bar{grid-template-columns:150px 1fr 54px}.big .bar .trk,.big .bar .fill{height:22px}
+.big .bar .val{font-family:Sora,sans-serif;font-weight:700;font-size:17px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--border);
+border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:0 0 8px}
+.facts div{background:var(--panel);padding:12px 14px}
+.facts b{display:block;font-family:Sora,sans-serif;font-size:22px;font-variant-numeric:tabular-nums}
+.facts span{color:var(--muted);font-size:13px}
+section{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px;
+margin:22px 0;box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--border)}th{color:var(--muted);font-weight:600}
 td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
 .wrap{overflow-x:auto}
-.bars{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin:8px 0}
-.bar{display:grid;grid-template-columns:minmax(120px,240px) 1fr 64px;gap:10px;align-items:center;margin:6px 0}
-.bar .lbl{font-size:13px;color:var(--muted);overflow-wrap:anywhere}
-.bar .trk{background:var(--track);border-radius:4px;height:14px}
-.bar .fill{background:var(--series);height:14px;border-radius:0 4px 4px 0}
-.bar .fill:hover{filter:brightness(1.15)}
-.bar .val{font-size:13px;text-align:right;font-variant-numeric:tabular-nums}
+.bars{margin:10px 0}
+.bar{display:grid;grid-template-columns:minmax(110px,230px) 1fr 64px;gap:12px;align-items:center;margin:8px 0}
+.bar .lbl{font-size:14px;color:var(--muted);overflow-wrap:anywhere}
+.bar .trk{background:var(--track);border-radius:5px;height:14px}
+.bar .fill{background:var(--series);height:14px;border-radius:0 5px 5px 0}
+.bar .val{font-size:14px;text-align:right;font-variant-numeric:tabular-nums}
+.note{font-size:13px;color:var(--muted);margin-top:4px}
 .ok{color:var(--good);font-weight:600}.fail{color:var(--bad);font-weight:600}
 code{font-size:13px}
 """
@@ -45,7 +63,7 @@ def bars(rows: list[tuple], unit: str = "", maxv: float | None = None, note: str
     """Single-series horizontal bars; identity comes from the row label, value is labelled."""
     vals = [v for _, v in rows if v is not None]
     top = maxv or (max(vals) if vals else 1) or 1
-    out = ['<div class="bars" role="img">']
+    out = ['<div class="bars">']
     for label, v in rows:
         w = 0 if v is None else max(0.5, 100 * v / top)
         txt = "n/a" if v is None else f"{v:g}{unit}"
@@ -53,7 +71,7 @@ def bars(rows: list[tuple], unit: str = "", maxv: float | None = None, note: str
                    f'<div class="trk"><div class="fill" style="width:{w:.1f}%"></div></div>'
                    f'<div class="val">{_e(txt)}</div></div>')
     if note:
-        out.append(f'<div class="muted" style="font-size:13px;margin-top:6px">{_e(note)}</div>')
+        out.append(f'<div class="note">{_e(note)}</div>')
     out.append("</div>")
     return "".join(out)
 
@@ -83,35 +101,35 @@ def render(metrics: dict, validation: dict, manifest: dict, repro: dict | None) 
     viol = next((d for d in det if d["issue_type"] == "REC_VIOLATES_PREREQUISITE"), {})
 
     h = [f"<!doctype html><html lang='en'><head><meta charset='utf-8'>"
-         f"<meta name='viewport' content='width=device-width,initial-scale=1'>"
-         f"<title>SkillPath Report</title><style>{CSS}</style></head><body><main>"]
-    h.append(f"<h1>SkillPath — evaluation report</h1><p class='lead'>Scale <b>{_e(scale['name'])}</b> · seed "
-             f"<code>{manifest['seed']}</code> · generator {manifest['generator_version']} · engine "
-             f"{manifest['engine_version']} · all data synthetic</p>")
+         f"<meta name='viewport' content='width=device-width,initial-scale=1'><title>SkillPath Results</title>"
+         "<link rel='preconnect' href='https://fonts.googleapis.com'>"
+         "<link href='https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&family=Sora:wght@600;700&display=swap' rel='stylesheet'>"
+         f"<style>{CSS}</style></head><body><main>"]
     rec = groups["RECOMMENDED"]["pass_rate_pct"]
+    elig = groups["ELIGIBLE_NOT_RECOMMENDED"]["pass_rate_pct"]
     blk = groups["BLOCKED_BY_PREREQUISITE"]["pass_rate_pct"]
-    tiles = [
-        (f"{scale['learners']:,}", "learners"), (f"{scale['skills']:,}", "skills"),
-        (f"{scale['content_items']:,}", "content items"), (f"{dp['attempts']:,}", "attempts"),
-        (f"{validation['checks_run']}", "validation checks run"),
-        ("0" if not unexpected else str(len(unexpected)), "unexpected issue types on baseline"),
-        ("100%" if recall_ok else "<100%", "injected anomalies detected"),
-        (f"{rec:.0f}% vs {blk:.0f}%", "pass rate: recommended vs prerequisite-blocked items"),
-    ]
-    h.append("<div class='tiles'>" + "".join(f"<div class='tile'><b>{_e(a)}</b><span>{_e(b)}</span></div>"
-                                              for a, b in tiles) + "</div>")
+    h.append("<div class='hero'><div>"
+             f"<h1>Recommended lessons were passed {rec:.0f}% of the time. Lessons the engine blocked: {blk:.0f}%.</h1>"
+             f"<p class='lead'>SkillPath suggests each learner's next activities using their mastery and the "
+             f"prerequisite graph. These are the results on the {_e(scale['name'])} dataset "
+             f"(seed {manifest['seed']}, all data synthetic).</p>"
+             "<a class='cta' href='explorer.html'>Open the learner explorer</a></div>"
+             "<div class='big'>" + bars([("Recommended", rec), ("Eligible, not recommended", elig),
+                                          ("Blocked by a prerequisite", blk)], "%", 100,
+                                         "Pass rate of lessons learners took within 30 days of a decision in the test period.")
+             + "</div></div>")
+    facts = [(f"{scale['learners']:,}", "learners"), (f"{scale['skills']:,}", "skills"),
+             (f"{scale['content_items']:,}", "lessons"), (f"{dp['attempts']:,}", "attempts"),
+             ("100%" if recall_ok else "<100%", "of planted bad records caught"),
+             ("0" if not unexpected else str(len(unexpected)), f"false alarms in {validation['checks_run']} checks")]
+    h.append("<div class='facts'>" + "".join(f"<div><b>{_e(a)}</b><span>{_e(b)}</span></div>" for a, b in facts) + "</div>")
 
     # ---------------------------------------------------------------- recommendations
-    h.append("<h2>1 · Do the recommendations help?</h2><p class='muted'>Test period only (decisions on "
+    h.append("<section><h2>Do the recommendations help?</h2><p class='muted'>Test period only (decisions on "
              f"{', '.join(re_['test_decision_dates'])}). Learners in the synthetic history never saw our "
              "recommendations, so this is an offline comparison: when a learner happened to attempt an item "
              "within 30 days of a decision, how often did they pass it, grouped by what the engine said about "
-             "that item at decision time.</p>")
-    h.append(bars([("Recommended (top 3)", groups["RECOMMENDED"]["pass_rate_pct"]),
-                   ("Eligible, not recommended", groups["ELIGIBLE_NOT_RECOMMENDED"]["pass_rate_pct"]),
-                   ("Blocked by prerequisite", groups["BLOCKED_BY_PREREQUISITE"]["pass_rate_pct"])],
-                  "%", 100, "Pass rate on the first attempt after the decision. Attempts: " +
-                  ", ".join(f"{k.replace('_', ' ').lower()} {v['attempts']}" for k, v in groups.items())))
+             "that item at decision time. The hero chart above shows the pass rates.</p>")
     h.append(table(["Measure", "Value"], [
         ["Decisions / recommendations", f"{re_['decisions']:,} / {re_['recommendations']:,}"],
         ["Recommendations violating a prerequisite (engine output)",
@@ -128,7 +146,7 @@ def render(metrics: dict, validation: dict, manifest: dict, repro: dict | None) 
     h.append(bars(sorted(re_["reason_codes"].items(), key=lambda kv: -kv[1])))
 
     # ---------------------------------------------------------------- mastery
-    h.append("<h2>2 · Is mastery estimated well? (temporal split)</h2><p class='muted'>Mastery is computed "
+    h.append("</section><section><h2>Can mastery predict the future?</h2><p class='muted'>Mastery is computed "
              f"only from evidence before <code>{_e(me['cutoff'][:10])}</code> and scored on "
              f"{me['test_attempts']:,} assessed attempts after it. {_e(me['leakage_check'])}.</p>")
     h.append(bars([(k, v["auc"]) for k, v in me["models"].items()], "", 1.0,
@@ -144,7 +162,7 @@ def render(metrics: dict, validation: dict, manifest: dict, repro: dict | None) 
              f"{ga['pairs']:,} learner-skill pairs.</p>")
 
     # ---------------------------------------------------------------- anomalies
-    h.append("<h2>3 · Are bad records caught?</h2><p class='muted'>Labelled edge cases were injected as new "
+    h.append("</section><section><h2>Are bad records caught?</h2><p class='muted'>Labelled edge cases were injected as new "
              "rows after the valid baseline; labels live only in <code>ground_truth/anomalies.csv</code>. "
              "The validator never reads them.</p>")
     h.append(table(["Issue type", "Injected", "Detected", "False +", "False −", "Precision", "Recall"],
@@ -152,7 +170,7 @@ def render(metrics: dict, validation: dict, manifest: dict, repro: dict | None) 
                      d["precision"], d["recall"]] for d in det], {1, 2, 3, 4, 5, 6}))
 
     # ---------------------------------------------------------------- validation
-    h.append("<h2>4 · Validation summary</h2>")
+    h.append("</section><section><h2>Which checks ran?</h2>")
     cats: dict = {}
     for c in validation["checks"]:
         k = cats.setdefault(c["category"], [0, 0])
@@ -167,7 +185,7 @@ def render(metrics: dict, validation: dict, manifest: dict, repro: dict | None) 
 
     # ---------------------------------------------------------------- data profile
     gap = dp["prerequisite_gap"]
-    h.append("<h2>5 · Does the data look realistic?</h2>")
+    h.append("</section><section><h2>Does the data look realistic?</h2>")
     h.append(bars([(f"Difficulty {k}", v) for k, v in dp["pass_rate_by_difficulty_pct"].items()], "%", 100,
                   "Pass rate by content difficulty."))
     h.append(bars([("Prerequisite never passed", gap["pass_rate_with_gap_pct"]),
@@ -187,7 +205,7 @@ def render(metrics: dict, validation: dict, manifest: dict, repro: dict | None) 
     ]))
 
     # ---------------------------------------------------------------- reproducibility
-    h.append("<h2>6 · Reproducibility</h2>")
+    h.append("</section><section><h2>Can it be reproduced exactly?</h2>")
     if repro:
         h.append(table(["Run", "Files", "Identical to run A"], [
             ["B: same seed", repro["files_compared"], status(repro["same_seed_identical"], "all byte-identical", "differs")],
@@ -197,7 +215,7 @@ def render(metrics: dict, validation: dict, manifest: dict, repro: dict | None) 
     else:
         h.append("<p class='muted'>Run <code>python -m skillpath reproduce</code> to add this section.</p>")
     h.append(f"<p class='muted'>Regenerate: <code>{_e(manifest['generator_command'])}</code></p>")
-    h.append("</main></body></html>")
+    h.append("</section></main></body></html>")
     return "".join(h)
 
 

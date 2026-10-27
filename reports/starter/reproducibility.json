@@ -7,7 +7,7 @@
   "files": [
     {
       "file": "ground_truth/anomalies.csv",
-      "sha256_A": "0af8233d96d0be385e8dca20fec761d5631f631f1814da90335ae141841ddb96",
+      "sha256_A": "764316cf2020c314d1b458db0d53c66012c69655753bbfb14c6ca8c162c94741",
       "same_in_B": true,
       "same_in_C": false,
       "rows_A": null,
@@ -95,19 +95,19 @@
     },
     {
       "file": "tables/mastery_snapshot.csv",
-      "sha256_A": "6b07e4858f983cbe7d007fec34f5fd7f9273b5e022edb3547fc5233c8cdb2064",
+      "sha256_A": "85b7e8b15b3b07eb3319d1ea92d577044896277e21509c4ca6d71981a2532232",
       "same_in_B": true,
       "same_in_C": false,
-      "rows_A": 10579,
-      "rows_B": 10579
+      "rows_A": 10116,
+      "rows_B": 10116
     },
     {
       "file": "tables/recommendation.csv",
-      "sha256_A": "de5408ecb543ea26d9a2aae19b37ac9ae2542aff8865f6cea79410b41f6c2761",
+      "sha256_A": "78fe84e4220f620b07efa0de03d989ea8d7959520e41dd152f2606811e40f474",
       "same_in_B": true,
       "same_in_C": false,
-      "rows_A": 10731,
-      "rows_B": 10731
+      "rows_A": 10443,
+      "rows_B": 10443
     },
     {
       "file": "tables/skill.csv",

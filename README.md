@@ -9,10 +9,16 @@ it with a reproducible synthetic dataset, ~200 integrity checks and a temporal e
 ```bash
 pip install -r requirements.txt
 python -m skillpath run --scale starter     # ~10 s: generate -> validate -> evaluate -> report
-python -m pytest -q                         # 13 tests
+python -m pytest -q                         # 14 tests
 ```
 
-Open `reports/starter/report.html` for the results.
+Then open two pages in your browser:
+
+* `reports/starter/report.html`: the results (does it work, is the data sound, is it reproducible)
+* `reports/starter/explorer.html`: the **learner explorer**. Pick any learner and see their skill map
+  (mastery per skill, prerequisite lines, unmet prerequisites in red), the top 3 recommendations with
+  their reasons, and which lessons are locked by which prerequisite. One-click examples show a new
+  learner, a learner blocked by a prerequisite, one recovering from a failed test and one stuck in a loop.
 
 ## Results
 
@@ -54,7 +60,7 @@ validate  ->  reads the files back: schema, PK/FK, enums, dates, lifecycle trans
               re-derivation of every derived value, prerequisite compliance, loops
 evaluate  ->  temporal split (2026-07-01): mastery AUC/Brier/calibration vs baselines,
               offline outcome comparison, precision/recall vs ground truth
-report    ->  reports/<scale>/report.html
+report    ->  reports/<scale>/report.html and explorer.html
 ```
 
 How the acceptance criteria are met:
@@ -74,6 +80,7 @@ How the acceptance criteria are met:
 | `python -m skillpath reproduce --scale starter` | runs twice with the same seed (byte-identical) and once with seed+1 (differs) |
 | `python -m skillpath validate --data data/starter` | validates an existing dataset folder |
 | `python -m skillpath load-sqlite --data data/starter` | loads the CSVs into SQLite with foreign keys ON |
+| `python -m skillpath explore --data data/starter` | rebuilds the learner explorer page |
 | `python -m skillpath docs` | regenerates `docs/DATA_DICTIONARY.md` from `schema.py` |
 
 Scales (same generator, only the numbers change — `skillpath/config.py`):
@@ -99,11 +106,12 @@ skillpath/            source code
   inject.py           labelled edge cases
   validate.py         integrity checks + precision/recall
   evaluate.py         metrics
+  explore.py          learner explorer data (+ explorer_template.html)
   io.py / report.py / pipeline.py / cli.py
 tests/                pytest suite
 data/sample/          tiny scale, every format (CSV, JSONL, seed.sql, schema.sql, ground truth)
 data/starter/         starter scale CSVs + ground truth + manifest
-reports/<scale>/      report.html, metrics.json, validation_summary.json,
+reports/<scale>/      report.html, explorer.html, metrics.json, validation_summary.json,
                       issues_detected.csv, detection_vs_ground_truth.csv, reproducibility.json
 docs/DESIGN.md        decisions, trade-offs, limitations
 docs/DATA_DICTIONARY.md  generated field-level dictionary

@@ -5,6 +5,7 @@
     python -m skillpath validate --data data/starter # validate an existing dataset folder
     python -m skillpath reproduce --scale starter    # same seed twice -> identical checksums
     python -m skillpath load-sqlite --data data/starter
+    python -m skillpath explore --data data/starter  # rebuild the learner explorer page
     python -m skillpath docs                         # regenerate docs/DATA_DICTIONARY.md
 """
 from __future__ import annotations
@@ -19,7 +20,7 @@ from pathlib import Path
 import pandas as pd
 
 from . import config as C
-from . import evaluate, io, pipeline, report, validate
+from . import evaluate, explore, io, pipeline, report, validate
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -91,6 +92,9 @@ def main(argv=None) -> None:
         p = sub.add_parser(name)
         p.add_argument("--data", type=Path, required=True)
         p.add_argument("--reports", type=Path, default=None)
+    p = sub.add_parser("explore")
+    p.add_argument("--data", type=Path, required=True)
+    p.add_argument("--reports", type=Path, default=None)
     sub.add_parser("docs")
     a = ap.parse_args(argv)
 
@@ -109,8 +113,9 @@ def main(argv=None) -> None:
         cmd_evaluate(out, reports, v)
         if a.with_reproduce:
             cmd_reproduce(scale, a.seed, reports)
-        print("[4/4] report")
+        print("[4/4] report + learner explorer")
         cmd_report(out, reports)
+        print(f"  explorer: {explore.write(v['tables'], reports / 'explorer.html')}")
     elif a.cmd == "validate":
         reports = a.reports or ROOT / "reports" / a.data.name
         cmd_validate(a.data, reports)
@@ -120,6 +125,10 @@ def main(argv=None) -> None:
         for k, v in rep.items():
             print(f"  {k:22s} loaded {v['loaded']:>8,}  rejected by DB constraints {v['rejected_by_constraints']:>4}")
         print(f"  -> {db}")
+    elif a.cmd == "explore":
+        reports = a.reports or ROOT / "reports" / a.data.name
+        reports.mkdir(parents=True, exist_ok=True)
+        print(f"  explorer: {explore.write(io.read_tables(a.data), reports / 'explorer.html')}")
     elif a.cmd == "docs":
         (ROOT / "docs").mkdir(exist_ok=True)
         (ROOT / "docs" / "DATA_DICTIONARY.md").write_text(io.data_dictionary_md(), encoding="utf-8")

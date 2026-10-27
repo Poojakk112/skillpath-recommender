@@ -141,3 +141,19 @@ def test_same_seed_same_bytes_different_seed_differs(tmp_path):
     res = pipeline.reproduce(TINY, C.DEFAULT_SEED, tmp_path, log=lambda *_: None)
     assert res["same_seed_identical"] is True
     assert res["different_seed_identical"] is False
+
+
+def test_every_prerequisite_of_every_covered_skill_is_met(built):
+    """Independent of Context.required: check straight from the raw tables."""
+    tables, _, gt = built
+    injected = set(gt["record_id"])
+    pre = tables["skill_prerequisite"].groupby("skill_id")["prerequisite_skill_id"].apply(list).to_dict()
+    covers = tables["content_skill"].groupby("content_id")["skill_id"].apply(list).to_dict()
+    recs = tables["recommendation"]
+    recs = recs[recs["content_id"].notna() & ~recs["recommendation_id"].isin(injected)]
+    for d, g in recs.groupby("as_of"):
+        look = M.to_lookup(M.compute_mastery(tables["assessment_result"], d))
+        for l, c in zip(g["learner_id"], g["content_id"]):
+            for s in covers[c]:
+                for p in pre.get(s, []):
+                    assert M.get(look, l, p)[0] >= C.PREREQ_MIN_MASTERY, (c, s, p)

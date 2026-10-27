@@ -25,5 +25,22 @@ portal, plus the submission-guidelines and FAQ PDFs, then:
 6. Wrote the tests (13, all passing), ran the full 10k-learner / 500k-attempt scale
    with the reproducibility check, and wrote the docs (commit 4+).
 
+### 2 — 27 Oct 2026, 11:48–12:12 IST (running it locally)
+
+> now you tell me slowly what i exactly i need to do dont tell me all at once
+
+Step-by-step local setup on Windows: unzip, open a terminal in the folder, install requirements,
+run the tests (13 passed), run the starter pipeline and open the report. pandas 3.1 on my machine
+printed deprecation warnings, so `validate.py` was changed to use `merge(...)` instead of
+`join(..., rsuffix=...)`.
+
+> but is not well designed properly i think so / you see and what exactly is this project is /
+> what exactly they ask to do? / but its frontend part looks normal / do both
+
+Asked for a plain-language explanation of the project and the brief, then for a better-looking
+frontend. Claude restyled the results report and built the interactive learner explorer
+(`explore.py`, `explorer_template.html`). Reviewing the explorer exposed the prerequisite-rule
+weakness described in `docs/AI_USAGE.md`; the rule was tightened and a test added.
+
 The assistant's own working notes are not reproduced here; the code and commit
 history show the evolution.

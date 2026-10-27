@@ -39,10 +39,10 @@
       "5": 21.57
     },
     "prerequisite_gap": {
-      "scored_attempts_on_items_with_prerequisites": 20225,
-      "attempted_with_unpassed_prerequisite_pct": 48.35,
-      "pass_rate_with_gap_pct": 18.49,
-      "pass_rate_without_gap_pct": 45.59
+      "scored_attempts_on_items_with_prerequisites": 21226,
+      "attempted_with_unpassed_prerequisite_pct": 50.08,
+      "pass_rate_with_gap_pct": 17.17,
+      "pass_rate_without_gap_pct": 48.41
     },
     "path_status": {
       "WITHDRAWN": 1113,
@@ -131,47 +131,47 @@
       "2026-09-01"
     ],
     "decisions": 2046,
-    "recommendations": 5631,
-    "content_recommendations": 5621,
+    "recommendations": 5511,
+    "content_recommendations": 5501,
     "every_recommendation_has_reason_code": true,
     "reason_codes": {
-      "NEXT_FRONTIER_SKILL": 3369,
-      "REMEDIATE_RECENT_FAIL": 1331,
-      "REMEDIATE_PREREQUISITE": 504,
+      "NEXT_FRONTIER_SKILL": 3264,
+      "REMEDIATE_RECENT_FAIL": 958,
+      "REMEDIATE_PREREQUISITE": 746,
+      "REINFORCE_NEAR_MASTERY": 311,
       "COLD_START_ENTRY": 203,
-      "REINFORCE_NEAR_MASTERY": 202,
-      "STRETCH_CHALLENGE": 12,
+      "STRETCH_CHALLENGE": 19,
       "ESCALATE_LOOP_NO_PROGRESS": 10
     },
     "exceptions_routed_to_instructor": 10,
-    "catalog_coverage_pct": 63.87,
+    "catalog_coverage_pct": 58.12,
     "outcomes": {
-      "NOT_TAKEN": 5420,
-      "PASSED": 120,
-      "FAILED": 44,
-      "COMPLETED": 27,
-      "ABANDONED": 10,
+      "NOT_TAKEN": 5292,
+      "PASSED": 131,
+      "FAILED": 37,
+      "COMPLETED": 30,
+      "ABANDONED": 11,
       "NOT_APPLICABLE": 10
     },
-    "learner_next_attempt_was_recommended_pct": 25.93,
+    "learner_next_attempt_was_recommended_pct": 29.63,
     "offline_pass_rate_by_item_group": {
       "RECOMMENDED": {
-        "attempts": 168,
-        "pass_rate_pct": 73.81
+        "attempts": 172,
+        "pass_rate_pct": 78.49
       },
       "ELIGIBLE_NOT_RECOMMENDED": {
-        "attempts": 196,
-        "pass_rate_pct": 67.35
+        "attempts": 161,
+        "pass_rate_pct": 73.29
       },
       "BLOCKED_BY_PREREQUISITE": {
-        "attempts": 287,
-        "pass_rate_pct": 24.74
+        "attempts": 318,
+        "pass_rate_pct": 23.27
       }
     },
     "predicted_vs_actual_for_taken_recommendations": {
-      "n": 168,
-      "mean_predicted": 0.586,
-      "actual_pass_rate": 0.738
+      "n": 172,
+      "mean_predicted": 0.606,
+      "actual_pass_rate": 0.785
     }
   },
   "anomaly_detection": [

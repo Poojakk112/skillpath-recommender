@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SkillPath Explorer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;
+  --paper:#f4f7fb;--grid:#e3eaf3;--panel:#ffffff;--ink:#15233b;--soft:#4d5d75;--faint:#8593a8;--rule:#d6dfea;
+  --accent:#2a78d6;--accent-ink:#ffffff;--block:#c7362f;--good:#1f7a3d;
+  --m0:#eef4fc;--m1:#cfe1f7;--m2:#99c0ee;--m3:#4f8fdc;--m4:#1d5bb0;
+  --shadow:0 1px 2px rgba(21,35,59,.06),0 4px 14px rgba(21,35,59,.06)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
+  --paper:#0e1624;--grid:#172235;--panel:#152033;--ink:#e6edf7;--soft:#aebbd0;--faint:#7b8aa3;--rule:#26354d;
+  --accent:#4b93ea;--accent-ink:#06121f;--block:#ef6b63;--good:#4cc173;
+  --m0:#1b2a40;--m1:#1f3d66;--m2:#285d9c;--m3:#3a7fd2;--m4:#8fbdf2;--shadow:none}}
+:root[data-theme="dark"]{color-scheme:dark;
+  --paper:#0e1624;--grid:#172235;--panel:#152033;--ink:#e6edf7;--soft:#aebbd0;--faint:#7b8aa3;--rule:#26354d;
+  --accent:#4b93ea;--accent-ink:#06121f;--block:#ef6b63;--good:#4cc173;
+  --m0:#1b2a40;--m1:#1f3d66;--m2:#285d9c;--m3:#3a7fd2;--m4:#8fbdf2;--shadow:none}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font:15px/1.55 "Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  background-color:var(--paper);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px}
+h1,h2,h3{font-family:Sora,"Public Sans",system-ui,sans-serif;letter-spacing:-.01em;margin:0}
+h1{font-size:30px;font-weight:700}h2{font-size:19px;font-weight:600}h3{font-size:15px;font-weight:600}
+main{max-width:1240px;margin:0 auto;padding:28px 16px 64px}
+header p{color:var(--soft);margin:6px 0 0;max-width:70ch}
+a{color:var(--accent)}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+.controls{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:end;margin:22px 0 10px}
+.field{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--soft)}
+.field input,.field select{background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:8px 10px;min-width:200px}
+.scenarios{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.scenarios span{font-size:13px;color:var(--soft);align-self:center;margin-right:2px}
+.chipbtn{background:var(--panel);border:1px solid var(--rule);border-radius:999px;padding:6px 12px;cursor:pointer;font-size:13px}
+.chipbtn:hover{border-color:var(--accent);color:var(--accent)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px}
+@media (max-width:900px){.layout{grid-template-columns:minmax(0,1fr)}}
+.layout>*{min-width:0}
+.panel{background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:18px;box-shadow:var(--shadow)}
+.stack>*+*{margin-top:20px}
+.panel h2{margin-bottom:4px}.sub{color:var(--soft);font-size:13px;margin:0 0 14px}
+.recs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.rec{border:1px solid var(--rule);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:6px;position:relative}
+.rec .rank{font-family:Sora,sans-serif;font-weight:700;font-size:26px;line-height:1;color:var(--accent)}
+.rec .what{font-weight:600}
+.rec .why{font-size:14px}
+.rec .code{font-size:12px;color:var(--faint)}
+.rec .rat{font-size:13px;color:var(--soft)}
+.rec .foot{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--soft);border-top:1px solid var(--rule);padding-top:8px;margin-top:auto}
+.rec.escalate{border-color:var(--block);grid-column:1/-1}
+.rec.escalate .rank{color:var(--block);font-size:18px}
+.mapwrap{overflow-x:auto;margin:0 -4px;padding:0 4px}
+svg text{font-family:"Public Sans",system-ui,sans-serif}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--soft);margin-top:10px;align-items:center}
+.sw{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:5px;border:1px solid var(--rule)}
+.items{display:flex;flex-direction:column;gap:8px}
+.irow{display:grid;grid-template-columns:120px 1fr;gap:10px;align-items:start}
+.irow .sk{font-size:13px;color:var(--soft);padding-top:5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.it{font-size:12.5px;border-radius:7px;padding:4px 8px;border:1px solid var(--rule);white-space:nowrap}
+.it.done{color:var(--good);border-color:transparent;background:color-mix(in srgb,var(--good) 10%,transparent)}
+.it.recommended{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+.it.locked{color:var(--faint);border-style:dashed}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:14px;margin:0}
+.kv dt{color:var(--soft)}.kv dd{margin:0;text-align:right}
+.pathlist{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-direction:column;gap:6px}
+.pathlist button{width:100%;text-align:left;background:none;border:1px solid var(--rule);border-radius:8px;padding:7px 10px;cursor:pointer;font-size:13px;display:flex;justify-content:space-between;gap:8px}
+.pathlist button[aria-current="true"]{border-color:var(--accent);box-shadow:inset 3px 0 0 var(--accent)}
+.pathlist button:disabled{cursor:default;opacity:.75}
+table{width:100%;border-collapse:collapse;font-size:13px}
+td{padding:5px 0;border-bottom:1px solid var(--rule)}td.n{text-align:right;font-variant-numeric:tabular-nums}
+.muted{color:var(--soft)}
+abbr{text-decoration:none;border-bottom:1px dotted var(--faint)}.small{font-size:13px}
+.empty{color:var(--soft);font-size:14px}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>SkillPath Explorer</h1>
+  <p id="intro"></p>
+</header>
+
+<div class="controls">
+  <label class="field">Learner
+    <input id="search" list="learnerlist" placeholder="Type a learner ID, e.g. LRN-000049" autocomplete="off">
+    <datalist id="learnerlist"></datalist>
+  </label>
+  <label class="field">Course in progress
+    <select id="pathsel"></select>
+  </label>
+</div>
+<div class="scenarios" id="scenarios"><span>Show me a learner who is</span></div>
+
+<div class="layout">
+  <div class="stack">
+    <section class="panel" aria-labelledby="h-recs">
+      <h2 id="h-recs">What to do next</h2>
+      <p class="sub" id="recsub"></p>
+      <div class="recs" id="recs"></div>
+    </section>
+    <section class="panel" aria-labelledby="h-map">
+      <h2 id="h-map">Skill map</h2>
+      <p class="sub">Each box is a skill, shaded by how well this learner knows it. Lines run from a prerequisite to the skill that needs it; red dashed lines are prerequisites not yet met (below <span id="thr"></span>).</p>
+      <div class="mapwrap"><svg id="map" role="img" aria-label="Skill prerequisite map"></svg></div>
+      <div class="legend" id="legend"></div>
+    </section>
+    <section class="panel" aria-labelledby="h-items">
+      <h2 id="h-items">Every item in the course</h2>
+      <p class="sub" id="itemsub"></p>
+      <div class="items" id="items"></div>
+    </section>
+  </div>
+  <aside class="stack">
+    <section class="panel" aria-labelledby="h-learner">
+      <h2 id="h-learner">Learner</h2>
+      <dl class="kv" id="learner"></dl>
+      <p class="sub" style="margin:12px 0 0">Courses, with status at the end of the data (30 Sep 2026)</p>
+      <ul class="pathlist" id="paths"></ul>
+    </section>
+    <section class="panel" aria-labelledby="h-recent">
+      <h2 id="h-recent">Recent attempts in this course</h2>
+      <table><tbody id="recent"></tbody></table>
+    </section>
+  </aside>
+</div>
+</main>
+
+<script>
+const D = /*__DATA__*/null;
+const REASON = {
+  COLD_START_ENTRY: "No test results yet, so start with an easy entry item",
+  NEXT_FRONTIER_SKILL: "Ready for this skill: every prerequisite is met",
+  REINFORCE_NEAR_MASTERY: "Almost mastered; one more success should lock it in",
+  REMEDIATE_RECENT_FAIL: "Last test on this skill failed; practise at the same or an easier level",
+  STRETCH_CHALLENGE: "Skill mastered; a harder item is still open",
+  REMEDIATE_PREREQUISITE: "Everything in the course is locked; learn this prerequisite first",
+  ESCALATE_NO_ELIGIBLE_CONTENT: "Nothing can be unlocked right now",
+  ESCALATE_LOOP_NO_PROGRESS: "Stuck repeating the same items without progress",
+  ESCALATE_NO_REMAINING_CONTENT: "Nothing left to recommend in this course"
+};
+const OUTCOME = {PASSED:"Taken within 30 days: passed",FAILED:"Taken within 30 days: failed",
+  COMPLETED:"Taken within 30 days: completed",ABANDONED:"Started within 30 days, abandoned",
+  NOT_TAKEN:"Not taken within 30 days",NOT_APPLICABLE:"Handled by an instructor"};
+const SCEN = [["new to the platform","COLD_START_ENTRY"],["blocked by a prerequisite","REMEDIATE_PREREQUISITE"],
+  ["recovering from a failed test","REMEDIATE_RECENT_FAIL"],["stuck in a loop","ESCALATE_LOOP_NO_PROGRESS"]];
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]);
+const skillName = s => D.skills[s] ? D.skills[s][0] : s;
+const courseName = c => D.courses[c] ? D.courses[c][0] : c;
+const itemLabel = c => { const x = D.content[c]; return x ? `${x[0]}, level ${x[1]}` : c; };
+const readable = t => esc(t)
+  .replace(/SKL-\d{6}/g, s => `<abbr title="${s}">${esc(D.skills[s] ? (D.skills[s][2] !== curCourse ? courseName(D.skills[s][2]) + " " : "") + skillName(s) : s)}</abbr>`)
+  .replace(/CNT-\d{6}/g, c => `<abbr title="${c}">${esc(D.content[c] ? itemLabel(c) : c)}</abbr>`);
+let curCourse = null;
+
+const byLearner = {};
+D.decisions.forEach((d, i) => (byLearner[d.learner] ||= []).push(i));
+let cur = 0;
+
+function init() {
+  $("intro").textContent = `What the recommender (${D.engine}) suggests for each learner on ${D.as_of}, and why. ` +
+    `Showing ${D.decisions.length.toLocaleString()} decisions. Pick a learner or try one of the examples.`;
+  $("thr").textContent = D.thresholds.prereq.toFixed(2);
+  $("learnerlist").innerHTML = Object.keys(byLearner).map(l => `<option value="${l}">`).join("");
+  const sc = $("scenarios");
+  SCEN.forEach(([label, code]) => {
+    const idx = D.decisions.findIndex(d => d.recs.some(r => r.reason === code));
+    if (idx < 0) return;
+    const b = document.createElement("button");
+    b.className = "chipbtn"; b.textContent = label;
+    b.onclick = () => show(idx); sc.appendChild(b);
+  });
+  const r = document.createElement("button");
+  r.className = "chipbtn"; r.textContent = "anyone (random)";
+  r.onclick = () => show(Math.floor(Math.random() * D.decisions.length)); sc.appendChild(r);
+  $("search").addEventListener("change", e => {
+    const v = e.target.value.trim().toUpperCase();
+    if (byLearner[v]) show(byLearner[v][0]);
+  });
+  $("pathsel").addEventListener("change", e => show(+e.target.value));
+  const h = decodeURIComponent(location.hash.slice(1));
+  show(byLearner[h] ? byLearner[h][0] : 0);
+}
+
+function show(i) {
+  cur = i; const d = D.decisions[i]; curCourse = d.course;
+  history.replaceState(null, "", "#" + d.learner);
+  $("search").value = d.learner;
+  $("pathsel").innerHTML = byLearner[d.learner].map(j =>
+    `<option value="${j}" ${j === i ? "selected" : ""}>${esc(courseName(D.decisions[j].course))}</option>`).join("");
+  renderRecs(d); renderMap(d); renderItems(d); renderLearner(d); renderRecent(d);
+}
+
+function renderRecs(d) {
+  $("recsub").textContent = `${d.learner} in ${courseName(d.course)} on ${D.as_of}. Recommendations only ever include items whose prerequisites are met.`;
+  $("recs").innerHTML = d.recs.map(r => {
+    if (!r.content) return `<article class="rec escalate">
+      <div class="rank">Sent to an instructor</div>
+      <div class="why">${esc(REASON[r.reason] || r.reason)}</div>
+      <div class="rat">${readable(r.rationale)}</div>
+      <div class="code">${esc(r.reason)}</div></article>`;
+    const other = D.content[r.content] && D.content[r.content][3] !== d.course
+      ? ` (from ${esc(courseName(D.content[r.content][3]))})` : "";
+    const p = r.p == null ? "" : `${Math.round(r.p * 100)}% predicted chance to pass`;
+    return `<article class="rec">
+      <div class="rank" aria-label="Rank ${r.rank}">${r.rank}</div>
+      <div class="what">${esc(r.content)} <span class="muted">${esc(itemLabel(r.content))}</span>${other}</div>
+      <div class="small muted">Works on ${esc(skillName(r.skill))}</div>
+      <div class="why">${esc(REASON[r.reason] || r.reason)}</div>
+      <div class="code">${esc(r.reason)}</div>
+      <div class="rat">${readable(r.rationale)}</div>
+      <div class="foot"><span>${p}</span><span>${esc(OUTCOME[r.outcome] || r.outcome)}</span></div></article>`;
+  }).join("");
+}
+
+function band(m, n) {
+  if (!n) return 0;
+  if (m >= D.thresholds.mastered) return 4;
+  if (m >= D.thresholds.prereq) return 3;
+  if (m >= 0.45) return 2;
+  return 1;
+}
+const BAND_FILL = ["var(--panel)", "var(--m1)", "var(--m2)", "var(--m3)", "var(--m4)"];
+const BAND_LABEL = ["No test results yet", "Weak (below 0.45)", "Learning (0.45 to 0.60)",
+  "Prerequisite level (0.60 to 0.70)", "Mastered (0.70 and up)"];
+
+function renderMap(d) {
+  const svg = $("map");
+  const W = 160, H = 54, GX = 46, GY = 14, PADT = 30;
+  const courseSkills = Object.keys(d.mastery).filter(s => D.skills[s] && D.skills[s][2] === d.course);
+  const extra = d.extra_skills.filter(s => D.skills[s]);
+  const cols = [];
+  if (extra.length) cols.push({title: "Other courses", skills: extra});
+  for (let L = 1; L <= 4; L++) {
+    const ss = courseSkills.filter(s => D.skills[s][1] === L).sort();
+    if (ss.length) cols.push({title: `Level ${L}`, skills: ss});
+  }
+  const pos = {}; let maxRows = 0;
+  cols.forEach((c, ci) => { c.skills.forEach((s, ri) => pos[s] = [ci * (W + GX), PADT + ri * (H + GY)]);
+    maxRows = Math.max(maxRows, c.skills.length); });
+  const width = cols.length * (W + GX) - GX, height = PADT + maxRows * (H + GY);
+  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  svg.style.width = "100%"; svg.style.maxWidth = width + "px"; svg.style.minWidth = Math.min(width, 860) + "px"; svg.style.height = "auto";
+  const targets = {}; d.recs.forEach(r => { if (r.skill && r.content) targets[r.skill] = targets[r.skill] || r.rank; });
+  let out = cols.map((c, ci) => `<text x="${ci * (W + GX)}" y="14" font-size="12" fill="var(--soft)">${esc(c.title)}</text>`).join("");
+  // edges first so boxes sit on top
+  Object.keys(pos).forEach(s => (D.skills[s][3] || []).forEach(p => {
+    if (!pos[p]) return;
+    const [x1, y1] = [pos[p][0] + W, pos[p][1] + H / 2], [x2, y2] = [pos[s][0], pos[s][1] + H / 2];
+    const met = (d.mastery[p] || [0])[0] >= D.thresholds.prereq;
+    const mx = (x1 + x2) / 2;
+    out += `<path d="M${x1} ${y1} C${mx} ${y1} ${mx} ${y2} ${x2} ${y2}" fill="none"
+      stroke="${met ? "var(--faint)" : "var(--block)"}" stroke-width="2" ${met ? "" : 'stroke-dasharray="5 4"'} opacity="${met ? .55 : .9}"/>`;
+  }));
+  Object.entries(pos).forEach(([s, [x, y]]) => {
+    const [m, n] = d.mastery[s] || [0, 0], b = band(m, n);
+    const fg = b >= 3 ? "#ffffff" : "var(--ink)";
+    const darkText = b === 4 ? "var(--panel)" : fg;
+    const t = targets[s];
+    const label = n ? `${m.toFixed(2)} from ${n} result${n > 1 ? "s" : ""}` : "no results yet";
+    const sub = D.skills[s][2] !== d.course ? courseName(D.skills[s][2]) + " " : "";
+    out += `<g><title>${esc(sub + skillName(s))}: ${label}${t ? ", recommended #" + t : ""}</title>
+      <rect x="${x}" y="${y}" width="${W}" height="${H}" rx="9" fill="${BAND_FILL[b]}"
+        stroke="${t ? "var(--accent)" : "var(--rule)"}" stroke-width="${t ? 3 : 1}" ${n ? "" : 'stroke-dasharray="4 3"'}/>
+      <text x="${x + 12}" y="${y + 22}" font-size="13" font-weight="600" fill="${b === 4 ? "var(--panel)" : b === 3 ? "#ffffff" : "var(--ink)"}">${esc(sub + skillName(s))}</text>
+      <text x="${x + 12}" y="${y + 40}" font-size="12" fill="${b === 4 ? "var(--panel)" : b === 3 ? "#ffffff" : "var(--soft)"}">${label}</text>
+      ${t ? `<circle cx="${x + W - 4}" cy="${y + 4}" r="11" fill="var(--accent)"/>
+        <text x="${x + W - 4}" y="${y + 8.5}" font-size="12" font-weight="700" text-anchor="middle" fill="var(--accent-ink)">${t}</text>` : ""}
+    </g>`;
+  });
+  svg.innerHTML = out;
+  $("legend").innerHTML = BAND_LABEL.map((l, i) =>
+    `<span><span class="sw" style="background:${BAND_FILL[i]};${i ? "" : "border-style:dashed"}"></span>${l}</span>`).join("") +
+    `<span><svg width="26" height="8" aria-hidden="true"><path d="M0 4H26" stroke="var(--block)" stroke-width="2" stroke-dasharray="5 4"/></svg> prerequisite not met</span>` +
+    `<span><span class="sw" style="border:3px solid var(--accent)"></span>skill of a recommendation (number = rank)</span>`;
+}
+
+function renderItems(d) {
+  const counts = {done: 0, recommended: 0, available: 0, locked: 0}, blockers = {};
+  const bySkill = {};
+  d.items.forEach(([c, st, rank, miss]) => {
+    counts[st]++; miss.forEach(([p]) => blockers[p] = (blockers[p] || 0) + 1);
+    const s = (D.content[c] || [])[2]; (bySkill[s] ||= []).push([c, st, rank, miss]);
+  });
+  const top = Object.entries(blockers).sort((a, b) => b[1] - a[1])[0];
+  $("itemsub").textContent = `${counts.done} done, ${counts.recommended} recommended, ${counts.available} available, ` +
+    `${counts.locked} locked.` + (top ? ` The biggest blocker is ${skillName(top[0])}, which locks ${top[1]} item${top[1] > 1 ? "s" : ""}.` : "");
+  const order = Object.keys(bySkill).sort((a, b) => (D.skills[a]?.[1] - D.skills[b]?.[1]) || (a < b ? -1 : 1));
+  $("items").innerHTML = order.map(s => `<div class="irow"><div class="sk">${esc(skillName(s))}</div><div class="chips">` +
+    bySkill[s].map(([c, st, rank, miss]) => {
+      const lbl = itemLabel(c);
+      if (st === "done") return `<span class="it done" title="${c}: done">✓ ${esc(lbl)}</span>`;
+      if (st === "recommended") return `<span class="it recommended" title="${c}: recommended #${rank}">#${rank} ${esc(lbl)}</span>`;
+      if (st === "locked") {
+        const why = miss.map(([p, m, mm]) => `${skillName(p)} ${m.toFixed(2)} of ${mm.toFixed(2)} needed`).join("; ");
+        return `<span class="it locked" title="${c}: locked. Needs ${esc(why)}">🔒 ${esc(lbl)}</span>`;
+      }
+      return `<span class="it" title="${c}: available">${esc(lbl)}</span>`;
+    }).join("") + `</div></div>`).join("") || `<p class="empty">No available items in this course.</p>`;
+}
+
+function renderLearner(d) {
+  const L = D.learners[d.learner];
+  $("learner").innerHTML = `<dt>ID</dt><dd>${d.learner}</dd><dt>Joined</dt><dd>${L[0]}</dd>
+    <dt>Prefers</dt><dd>${esc(L[1])}</dd><dt>Account (end of data)</dt><dd>${esc(L[2])}</dd><dt>Attempts so far</dt><dd>${L[3].toLocaleString()}</dd>`;
+  const decs = byLearner[d.learner];
+  $("paths").innerHTML = L[4].map(([p, c, st]) => {
+    const j = decs.find(k => D.decisions[k].path === p);
+    return `<li><button ${j === undefined ? "disabled" : `data-i="${j}"`} aria-current="${p === d.path}">
+      <span>${esc(courseName(c))}</span><span class="muted">${esc(st)}</span></button></li>`;
+  }).join("");
+  $("paths").querySelectorAll("button[data-i]").forEach(b => b.onclick = () => show(+b.dataset.i));
+}
+
+function renderRecent(d) {
+  $("recent").innerHTML = d.recent.length ? d.recent.slice().reverse().map(([dt, c, st, sc]) =>
+    `<tr><td>${dt}</td><td>${esc(itemLabel(c))}</td><td class="n">${st === "ABANDONED" ? "abandoned" : sc == null ? "done" : sc}</td></tr>`).join("")
+    : `<tr><td class="empty">No attempts in this course before ${D.as_of}.</td></tr>`;
+}
+
+init();
+</script>
+</body>
+</html>

@@ -36,8 +36,8 @@
     "attempt": 40090,
     "assessment_result": 40581,
     "learning_path_event": 6213,
-    "recommendation": 10731,
-    "mastery_snapshot": 10579,
+    "recommendation": 10443,
+    "mastery_snapshot": 10116,
     "ground_truth/anomalies": 50
   },
   "sha256": {
@@ -51,9 +51,9 @@
     "tables/learning_path_event.csv": "d92b363bccb0504781efbbe7e0bbee1fe0393c8e1248c5ef2892b4d4ac3c4468",
     "tables/attempt.csv": "56d950cde0bd57552ff68efb5696f3f05ed9496bc6a91ed5b2876273a52da8d8",
     "tables/assessment_result.csv": "524dfef757cb2564599af016a1883b6bcdce1fc99136fc7aea6b4f3f06ada09a",
-    "tables/mastery_snapshot.csv": "6b07e4858f983cbe7d007fec34f5fd7f9273b5e022edb3547fc5233c8cdb2064",
-    "tables/recommendation.csv": "de5408ecb543ea26d9a2aae19b37ac9ae2542aff8865f6cea79410b41f6c2761",
-    "ground_truth/anomalies.csv": "0af8233d96d0be385e8dca20fec761d5631f631f1814da90335ae141841ddb96",
+    "tables/mastery_snapshot.csv": "85b7e8b15b3b07eb3319d1ea92d577044896277e21509c4ca6d71981a2532232",
+    "tables/recommendation.csv": "78fe84e4220f620b07efa0de03d989ea8d7959520e41dd152f2606811e40f474",
+    "ground_truth/anomalies.csv": "764316cf2020c314d1b458db0d53c66012c69655753bbfb14c6ca8c162c94741",
     "ground_truth/learner_truth.csv": "d0d14d8677285f04caa4f29e710e32f9f751430b45d48555e22557796336b078",
     "ground_truth/latent_skill_state.csv": "2e9dfe6db20108d7aa12af12e2aebc385a2d0a6e6ce6fe1480100e91d7e2fe55"
   }

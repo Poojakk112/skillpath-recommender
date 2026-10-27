@@ -20,6 +20,7 @@ problem statement, write files, run Python and tests in a sandbox, and make git 
 | Validator, evaluation, report, CLI | heavy — drafted by Claude |
 | Tests | heavy — drafted by Claude |
 | Docs (`README.md`, `DESIGN.md`) | heavy — drafted by Claude |
+| Results report and learner explorer pages | heavy — built by Claude after I said the first report looked too plain |
 
 Bugs that were found by running the code (not by reading it) and then fixed:
 
@@ -27,7 +28,10 @@ Bugs that were found by running the code (not by reading it) and then fixed:
   produced 2 false "failures" — found because the validator reported unexpected issues on a clean baseline;
 * the future-mastery injector sometimes injected fewer anomalies than requested;
 * loops were injected after decisions, so the engine's exception path never fired —
-  the pipeline was re-ordered so the engine sees (and escalates) them.
+  the pipeline was re-ordered so the engine sees (and escalates) them;
+* the learner explorer made a rule weakness visible: an item that also covered a prerequisite as a
+  secondary skill skipped that prerequisite. The rule was made stricter (every prerequisite of every
+  covered skill must be met) and an independent test was added that checks this from the raw tables.
 
 ## What I reviewed, changed or validated myself
 
