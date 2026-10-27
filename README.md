@@ -12,7 +12,8 @@ python -m skillpath run --scale starter     # ~10 s: generate -> validate -> eva
 python -m pytest -q                         # 14 tests
 ```
 
-Then open `reports/starter/report.html` in your browser for the results.
+Then open `reports/starter/report.html` in your browser for the results. It ends with a worked example:
+every lesson of one learner's course marked done, recommended (#1–#3), available, or locked by a prerequisite.
 
 ## Results
 

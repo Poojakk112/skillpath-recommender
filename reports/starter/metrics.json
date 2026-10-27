@@ -225,5 +225,242 @@
       "precision": 1.0,
       "recall": 1.0
     }
-  ]
+  ],
+  "example_learner": {
+    "learner": "LRN-000128",
+    "course": "Cloud 01",
+    "as_of": "01 September 2026",
+    "recommendations": [
+      [
+        1,
+        "Quiz, level 3",
+        "Topic 07",
+        "REMEDIATE_RECENT_FAIL"
+      ],
+      [
+        2,
+        "Quiz, level 3",
+        "Topic 08",
+        "NEXT_FRONTIER_SKILL"
+      ],
+      [
+        3,
+        "Quiz, level 4",
+        "Topic 08",
+        "NEXT_FRONTIER_SKILL"
+      ]
+    ],
+    "lessons": {
+      "Topic 01": [
+        [
+          "Quiz, level 1",
+          "done",
+          ""
+        ],
+        [
+          "Article, level 2",
+          "done",
+          ""
+        ],
+        [
+          "Quiz, level 1",
+          "done",
+          ""
+        ],
+        [
+          "Video, level 1",
+          "done",
+          ""
+        ]
+      ],
+      "Topic 02": [
+        [
+          "Quiz, level 3",
+          "done",
+          ""
+        ],
+        [
+          "Quiz, level 1",
+          "done",
+          ""
+        ],
+        [
+          "Article, level 1",
+          "done",
+          ""
+        ],
+        [
+          "Project, level 1",
+          "done",
+          ""
+        ]
+      ],
+      "Topic 03": [
+        [
+          "Quiz, level 1",
+          "done",
+          ""
+        ],
+        [
+          "Video, level 1",
+          "done",
+          ""
+        ],
+        [
+          "Exercise, level 1",
+          "done",
+          ""
+        ]
+      ],
+      "Topic 04": [
+        [
+          "Quiz, level 2",
+          "done",
+          ""
+        ],
+        [
+          "Quiz, level 3",
+          "done",
+          ""
+        ],
+        [
+          "Video, level 2",
+          "done",
+          ""
+        ],
+        [
+          "Quiz, level 2",
+          "done",
+          ""
+        ]
+      ],
+      "Topic 05": [
+        [
+          "Quiz, level 3",
+          "done",
+          ""
+        ],
+        [
+          "Exercise, level 3",
+          "done",
+          ""
+        ],
+        [
+          "Video, level 2",
+          "done",
+          ""
+        ],
+        [
+          "Article, level 3",
+          "done",
+          ""
+        ]
+      ],
+      "Topic 06": [
+        [
+          "Quiz, level 4",
+          "available",
+          ""
+        ],
+        [
+          "Exercise, level 4",
+          "available",
+          ""
+        ],
+        [
+          "Quiz, level 2",
+          "done",
+          ""
+        ],
+        [
+          "Quiz, level 2",
+          "done",
+          ""
+        ]
+      ],
+      "Topic 07": [
+        [
+          "Quiz, level 3",
+          "recommended",
+          "#1"
+        ],
+        [
+          "Video, level 3",
+          "done",
+          ""
+        ],
+        [
+          "Video, level 3",
+          "done",
+          ""
+        ]
+      ],
+      "Topic 08": [
+        [
+          "Quiz, level 3",
+          "recommended",
+          "#2"
+        ],
+        [
+          "Video, level 2",
+          "done",
+          ""
+        ],
+        [
+          "Quiz, level 4",
+          "recommended",
+          "#3"
+        ],
+        [
+          "Quiz, level 3",
+          "done",
+          ""
+        ]
+      ],
+      "Topic 09": [
+        [
+          "Quiz, level 5",
+          "locked",
+          "needs Topic 06 0.58 of 0.60"
+        ],
+        [
+          "Project, level 2",
+          "done",
+          ""
+        ],
+        [
+          "Video, level 4",
+          "done",
+          ""
+        ],
+        [
+          "Quiz, level 5",
+          "locked",
+          "needs Topic 06 0.58 of 0.60"
+        ]
+      ],
+      "Topic 10": [
+        [
+          "Quiz, level 3",
+          "locked",
+          "needs Topic 06 0.58 of 0.60"
+        ],
+        [
+          "Video, level 3",
+          "done",
+          ""
+        ],
+        [
+          "Video, level 4",
+          "locked",
+          "needs Topic 06 0.58 of 0.60"
+        ],
+        [
+          "Video, level 4",
+          "locked",
+          "needs Topic 06 0.58 of 0.60"
+        ]
+      ]
+    }
+  }
 }

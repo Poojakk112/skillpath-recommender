@@ -7,6 +7,7 @@
 3. Recommendations   - on the test decision dates: prerequisite compliance,
    reason-code mix, exceptions, coverage, and an offline outcome analysis.
 4. Anomaly detection - validator precision / recall per injected issue type.
+5. One worked example - every lesson of one learner's course and why it is (not) recommended.
 
 Ground truth (ground_truth/*.csv) is read here ONLY to score; it never feeds
 the recommender or the mastery estimate.
@@ -224,4 +225,54 @@ def evaluate(tables: dict, truth: dict, issues: pd.DataFrame, gt: pd.DataFrame) 
         "mastery_temporal_evaluation": mastery_eval(clean, truth["latent_skill_state"]),
         "recommendation_evaluation": recommendation_eval(clean, flagged),
         "anomaly_detection": detection.to_dict(orient="records"),
+        "example_learner": example_learner(clean),
     }
+
+
+# ------------------------------------------------------------------ 5. one worked example
+def example_learner(t: dict, as_of=None) -> dict:
+    """Every lesson of one learner's course on the last test date, with its status:
+    done, recommended (#rank), available, or locked (and which prerequisite blocks it)."""
+    as_of = pd.Timestamp(as_of or C.TEST_DECISION_DATES[-1])
+    ctx = R.Context(t)
+    hist = R.History(t["attempt"])
+    look = M.to_lookup(M.compute_mastery(t["assessment_result"], as_of))
+    tv = as_of.value
+    skill_name = dict(zip(t["skill"]["skill_id"], t["skill"]["name"]))
+    short = lambda s: skill_name.get(s, s).split(" · ")[-1]
+    fmt = lambda c: f"{ctx.format_of[c].title()}, level {ctx.difficulty[c]}"
+    recs = t["recommendation"]
+    recs = recs[(recs["as_of"] == as_of) & recs["content_id"].notna()]
+    for dec, g in recs.groupby("decision_id", sort=True):
+        learner, pid = g["learner_id"].iloc[0], g["path_id"].iloc[0]
+        course = ctx.course_of[g["content_id"].iloc[0]]
+        if len(g) < 3 or g["reason_code"].eq("REMEDIATE_PREREQUISITE").any():
+            continue
+        rank = dict(zip(g["content_id"], g["rank"]))
+        rows = hist.before(learner, tv)
+        done = {r.content for r in rows if r.status == "COMPLETED" and (r.score is None or r.score >= C.PASS_SCORE)}
+        by_skill: dict = {}
+        for c in ctx.course_items[course]:
+            if not ctx.available(c, tv):
+                continue
+            miss = ctx.missing(c, learner, look, tv)
+            if c in rank:
+                status, why = "recommended", f"#{int(rank[c])}"
+            elif c in done:
+                status, why = "done", ""
+            elif miss:
+                status, why = "locked", "; ".join(f"needs {short(p)} {m:.2f} of {mm:.2f}" for p, m, mm in miss)
+            else:
+                status, why = "available", ""
+            by_skill.setdefault(short(ctx.primary[c]), []).append([fmt(c), status, why])
+        statuses = [i[1] for v in by_skill.values() for i in v]
+        if "locked" not in statuses or statuses.count("done") < 5:
+            continue
+        course_title = t["course"].set_index("course_id").at[course, "title"]
+        return {
+            "learner": learner, "course": course_title, "as_of": as_of.strftime("%d %B %Y"),
+            "recommendations": [[int(k), fmt(c), short(s), rc] for k, c, s, rc in
+                                zip(g["rank"], g["content_id"], g["target_skill_id"], g["reason_code"])],
+            "lessons": by_skill,
+        }
+    return {}

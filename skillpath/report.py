@@ -52,6 +52,14 @@ td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
 .note{font-size:13px;color:var(--muted);margin-top:4px}
 .ok{color:var(--good);font-weight:600}.fail{color:var(--bad);font-weight:600}
 code{font-size:13px}
+.lessons{display:grid;grid-template-columns:110px 1fr;gap:8px 12px;align-items:start;margin-top:12px}
+.lessons .sk{font-size:13px;color:var(--muted);padding-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.it{font-size:13px;border-radius:7px;padding:3px 9px;border:1px solid var(--border);white-space:nowrap}
+.it.done{color:var(--good);border-color:transparent;background:color-mix(in srgb,var(--good) 12%,transparent)}
+.it.recommended{background:var(--series);color:#fff;border-color:var(--series);font-weight:600}
+.it.locked{color:var(--faint);border-style:dashed}
+.key{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:13px;color:var(--muted);margin-top:14px}
 """
 
 
@@ -143,6 +151,26 @@ def render(metrics: dict, validation: dict, manifest: dict, repro: dict | None) 
     ]))
     h.append("<h3>Reason codes</h3>")
     h.append(bars(sorted(re_["reason_codes"].items(), key=lambda kv: -kv[1])))
+
+    # ---------------------------------------------------------------- one learner, every lesson
+    ex = metrics.get("example_learner") or {}
+    if ex:
+        h.append(f"</section><section><h2>One learner, every lesson</h2><p class='muted'>{_e(ex['learner'])} in "
+                 f"{_e(ex['course'])} on {_e(ex['as_of'])}. Each chip is a lesson. The engine only recommends "
+                 "lessons whose prerequisites are met; hover a locked lesson to see what blocks it.</p>")
+        h.append(table(["Rank", "Lesson", "Skill", "Reason code"], [[r[0], r[1], r[2], r[3]] for r in ex["recommendations"]], {0}))
+        icon = {"done": "✓ ", "recommended": "", "available": "", "locked": "🔒 "}
+        rows = []
+        for skill, items in ex["lessons"].items():
+            chips = "".join(
+                f'<span class="it {st}" title="{_e(why or st)}">{icon[st]}{_e(why + " " if st == "recommended" else "")}{_e(lbl)}</span>'
+                for lbl, st, why in items)
+            rows.append(f'<div class="sk">{_e(skill)}</div><div class="chips">{chips}</div>')
+        h.append('<div class="lessons">' + "".join(rows) + "</div>")
+        h.append('<div class="key"><span><span class="it done">✓ done</span></span>'
+                 '<span><span class="it recommended">#1 recommended</span></span>'
+                 '<span><span class="it">available</span></span>'
+                 '<span><span class="it locked">🔒 locked by a prerequisite</span></span></div>')
 
     # ---------------------------------------------------------------- mastery
     h.append("</section><section><h2>Can mastery predict the future?</h2><p class='muted'>Mastery is computed "
