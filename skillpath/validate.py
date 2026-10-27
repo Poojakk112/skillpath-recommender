@@ -253,7 +253,7 @@ def path_checks(t: dict, rep: Report) -> None:
     rep.add("learning_path_event.reconciles_with_attempts", "reconciliation", "learning_path",
             "PATH_LIFECYCLE_MISMATCH", n, sorted(set(m.loc[diff, "path_id"])))
     state = lifecycle.path_state(ev)
-    j = p.join(state, on="path_id", rsuffix="_exp")
+    j = p.merge(state.add_suffix("_exp"), left_on="path_id", right_index=True, how="left")
     bad = (j["current_status"] != j["current_status_exp"]) | (j["status_updated_at"] != j["status_updated_at_exp"]) | \
           ~((j["completed_at"] == j["completed_at_exp"]) | (j["completed_at"].isna() & j["completed_at_exp"].isna()))
     rep.add("learning_path.current_status_is_latest_event", "reconciliation", "learning_path",
@@ -293,7 +293,7 @@ def mastery_checks(t: dict, rep: Report) -> None:
     mismatch = []
     for d, g in s[~future].groupby("as_of"):
         exp = M.compute_mastery(t["assessment_result"], d).set_index(M.KEYS)
-        j = g.join(exp, on=M.KEYS, rsuffix="_exp")
+        j = g.merge(exp.add_suffix("_exp"), left_on=M.KEYS, right_index=True, how="left")
         j["mastery_exp"] = j["mastery_exp"].fillna(C.MASTERY_PRIOR)
         j["evidence_count_exp"] = j["evidence_count_exp"].fillna(0)
         bad = ((j["mastery"] - j["mastery_exp"]).abs() > 1e-6) | (j["evidence_count"] != j["evidence_count_exp"])
