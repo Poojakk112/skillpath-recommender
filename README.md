@@ -27,8 +27,8 @@ Starter-scale numbers are in `reports/starter/report.html` and tell the same sto
 
 | Question | Result |
 |---|---|
-| Does the engine ever recommend an item whose prerequisites are unmet? | **No.** 0 of 54k engine recommendations; only the 50 injected bad ones are flagged |
-| Do recommended items work out better? | Items learners took **after we recommended them passed 75 %** of the time, vs **69 %** for other eligible items and **23 %** for items our gate blocked |
+| Does the engine ever recommend an item whose prerequisites are unmet? | **No.** 0 of 52k engine recommendations; only the 50 injected bad ones are flagged |
+| Do recommended items work out better? | Items learners took **after we recommended them passed 77 %** of the time, vs **72 %** for other eligible items and **23 %** for items our gate blocked |
 | Is mastery predictive on unseen (future) data? | **AUC 0.74** on 9,961 attempts after the 2026-07-01 cutoff, vs 0.66 for difficulty-only and 0.66 for a learner's average score |
 | Does mastery track the hidden truth? | Spearman **0.85** with the simulator's hidden knowledge (84k learner-skill pairs) |
 | Are injected bad records caught? | **50/50** for each of the 5 edge-case types — precision 1.0, recall 1.0 |
@@ -37,14 +37,14 @@ Starter-scale numbers are in `reports/starter/report.html` and tell the same sto
 
 Every recommendation carries a reason code and a rationale such as:
 
-> `REC-00000015` (NEXT_FRONTIER_SKILL): prerequisites met and skill not yet learned; SKL-000056 mastery 0.30 (n=0); difficulty 2; prerequisites met: SKL-000051 0.66>=0.60, SKL-000053 0.75>=0.60
+> `REC-00000035` (NEXT_FRONTIER_SKILL): prerequisites met and skill not yet learned; SKL-000065 mastery 0.30 (n=0); difficulty 2; prerequisites met: SKL-000061 0.64>=0.60
 >
-> `REC-00000010` (REMEDIATE_PREREQUISITE): all 27 remaining course items are blocked by prerequisites; SKL-000042 is the nearest prerequisite the learner can work on now; SKL-000042 mastery 0.30 (n=0); difficulty 1; no prerequisites
+> `REC-00000009` (REMEDIATE_PREREQUISITE): all 22 remaining course items are blocked by prerequisites; SKL-000031 is the nearest prerequisite the learner can work on now; SKL-000031 mastery 0.56 (n=7); difficulty 1; no prerequisites
 
 (real rows from `data/starter/tables/recommendation.csv`)
 
 When nothing in a course is eligible, the engine walks the prerequisite graph and recommends the
-blocking prerequisite (`REMEDIATE_PREREQUISITE`, 20 % of recommendations at full scale);
+blocking prerequisite (`REMEDIATE_PREREQUISITE`, 25 % of recommendations at full scale);
 learners stuck in a loop are routed to an instructor (`ESCALATE_LOOP_NO_PROGRESS`).
 
 ## What it does

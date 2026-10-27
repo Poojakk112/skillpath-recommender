@@ -99,106 +99,106 @@ attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-009223-0000
 attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-009669-000045,started_at < learner.signup_at
 attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-009692-000226,started_at < learner.signup_at
 attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-009921-000024,started_at < learner.signup_at
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094264,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094265,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094266,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094267,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094268,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094269,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094270,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094271,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094272,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094273,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094274,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094275,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094276,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094277,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094278,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094279,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094280,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094281,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094282,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094283,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094284,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094285,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094286,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094287,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094288,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094289,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094290,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094291,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094292,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094293,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094294,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094295,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094296,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094297,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094298,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094299,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094300,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094301,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094302,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094303,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094304,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094305,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094306,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094307,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094308,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094309,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094310,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094311,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094312,last_evidence_at >= as_of
-mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094313,last_evidence_at >= as_of
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101894,SKL-000141 0.44<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101897,SKL-000399 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101900,SKL-000150 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101903,SKL-000041 0.47<0.60; SKL-000042 0.41<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101906,SKL-000139 0.30<0.60; SKL-000140 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101909,SKL-000132 0.51<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101912,SKL-000291 0.53<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101915,SKL-000130 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101918,SKL-000069 0.30<0.60; SKL-000113 0.50<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101921,SKL-000040 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101924,SKL-000401 0.55<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101927,SKL-000190 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101930,SKL-000150 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101933,SKL-000410 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101936,SKL-000160 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101939,SKL-000150 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101942,SKL-000056 0.49<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101895,SKL-000223 0.54<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101898,SKL-000124 0.50<0.60; SKL-000125 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101901,SKL-000309 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101904,SKL-000146 0.50<0.60; SKL-000147 0.55<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101907,SKL-000262 0.44<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101910,SKL-000392 0.28<0.60; SKL-000393 0.44<0.60; SKL-000395 0.21<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101913,SKL-000341 0.37<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101916,SKL-000475 0.51<0.60; SKL-000477 0.43<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101919,SKL-000090 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101922,SKL-000450 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101925,SKL-000094 0.51<0.60; SKL-000096 0.56<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101928,SKL-000010 0.49<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101931,SKL-000150 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101934,SKL-000335 0.58<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101937,SKL-000041 0.58<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101940,SKL-000052 0.52<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101943,SKL-000002 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101896,SKL-000003 0.51<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101899,SKL-000163 0.44<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101902,SKL-000202 0.53<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101905,SKL-000029 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101908,SKL-000139 0.30<0.60; SKL-000140 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101911,SKL-000200 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101914,SKL-000003 0.58<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101917,SKL-000191 0.56<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101920,SKL-000103 0.57<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101923,SKL-000090 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101926,SKL-000004 0.33<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101929,SKL-000245 0.58<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101932,SKL-000301 0.32<0.60; SKL-000302 0.59<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101935,SKL-000090 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101938,SKL-000199 0.30<0.60
-recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101941,SKL-000024 0.51<0.60
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087209,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087210,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087211,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087212,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087213,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087214,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087215,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087216,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087217,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087218,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087219,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087220,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087221,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087222,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087223,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087224,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087225,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087226,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087227,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087228,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087229,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087230,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087231,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087232,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087233,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087234,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087235,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087236,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087237,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087238,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087239,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087240,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087241,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087242,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087243,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087244,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087245,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087246,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087247,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087248,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087249,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087250,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087251,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087252,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087253,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087254,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087255,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087256,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087257,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00087258,last_evidence_at >= as_of
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097836,SKL-000141 0.44<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097839,SKL-000399 0.30<0.60; SKL-000442 0.54<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097842,SKL-000150 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097845,SKL-000041 0.47<0.60; SKL-000042 0.41<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097848,SKL-000139 0.30<0.60; SKL-000140 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097851,SKL-000132 0.51<0.60; SKL-000135 0.43<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097854,SKL-000291 0.53<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097857,SKL-000130 0.30<0.60; SKL-000172 0.51<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097860,SKL-000069 0.30<0.60; SKL-000113 0.50<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097863,SKL-000040 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097866,SKL-000401 0.55<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097869,SKL-000190 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097872,SKL-000150 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097875,SKL-000410 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097878,SKL-000160 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097881,SKL-000150 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097884,SKL-000056 0.49<0.60; SKL-000058 0.36<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097837,SKL-000223 0.54<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097840,SKL-000124 0.50<0.60; SKL-000125 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097843,SKL-000309 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097846,SKL-000146 0.50<0.60; SKL-000147 0.55<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097849,SKL-000262 0.44<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097852,SKL-000392 0.28<0.60; SKL-000393 0.44<0.60; SKL-000394 0.25<0.60; SKL-000395 0.21<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097855,SKL-000341 0.37<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097858,SKL-000475 0.51<0.60; SKL-000477 0.43<0.60; SKL-000478 0.41<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097861,SKL-000090 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097864,SKL-000450 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097867,SKL-000094 0.51<0.60; SKL-000096 0.56<0.60; SKL-000098 0.28<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097870,SKL-000010 0.49<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097873,SKL-000150 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097876,SKL-000335 0.58<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097879,SKL-000041 0.58<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097882,SKL-000052 0.52<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097885,SKL-000002 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097838,SKL-000003 0.51<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097841,SKL-000163 0.44<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097844,SKL-000202 0.53<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097847,SKL-000029 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097850,SKL-000139 0.30<0.60; SKL-000140 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097853,SKL-000200 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097856,SKL-000003 0.58<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097859,SKL-000191 0.56<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097862,SKL-000103 0.57<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097865,SKL-000090 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097868,SKL-000004 0.33<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097871,SKL-000245 0.58<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097874,SKL-000301 0.32<0.60; SKL-000302 0.59<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097877,SKL-000090 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097880,SKL-000199 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00097883,SKL-000024 0.51<0.60
 learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-003682,"8 attempts on <= 2 items, no pass, no gain"
 learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-004225,"8 attempts on <= 2 items, no pass, no gain"
 learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-004710,"8 attempts on <= 2 items, no pass, no gain"
