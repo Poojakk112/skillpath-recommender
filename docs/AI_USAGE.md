@@ -37,9 +37,9 @@ Bugs that were found by running the code (not by reading it) and then fixed:
 
 > Fill this in honestly before submitting — reviewers may ask you to explain any line.
 
-- [ ] Ran `python -m pytest -q` and `python -m skillpath run --scale starter` on my own machine
+- [x] Ran `python -m pytest -q` (14 passed) and `python -m skillpath run --scale starter` on my own Windows laptop; my results matched exactly
 - [ ] Read `schema.py`, `mastery.py` and `recommend.py` end to end and can explain every rule
-- [ ] Opened `reports/starter/report.html` and checked the numbers make sense
+- [x] Opened `reports/starter/report.html` and checked the numbers make sense
 - [ ] Opened a few rows of `data/starter/tables/recommendation.csv` and traced one recommendation back to its mastery snapshot and attempts
-- [ ] Changes I made myself: …
-- [ ] Decisions I disagreed with / would change: …
+- [x] Changes I made myself: asked for a clearer results page, then asked to remove a heavy interactive page so the project stays simple and focused on the brief
+- [x] Decisions I disagreed with / would change: the first report looked too plain, so I asked for a better design
