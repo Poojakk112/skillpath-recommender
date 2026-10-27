@@ -266,8 +266,8 @@ def _remediate(ctx, look, learner, t, blocked, done, n_remaining, used) -> list:
         m, n, _ = M.get(look, learner, s)
         desired = min(5.0, max(1.0, ctx.skill_level[s] + 2.0 * (m - 0.5)))
         ok.sort(key=lambda c: (abs(ctx.difficulty[c] - desired), c))
-        why = (f"all {n_remaining} remaining course items are blocked; "
-               f"{s} is a prerequisite (mastery {m:.2f})")
+        why = (f"all {n_remaining} remaining course items are blocked by prerequisites; "
+               f"{s} is the nearest prerequisite the learner can work on now")
         for c in ok[:2]:
             recs.append(_content_rec(ctx, look, learner, c, s, "REMEDIATE_PREREQUISITE", m, n, used, extra=why))
             if len(recs) == C.TOP_K:

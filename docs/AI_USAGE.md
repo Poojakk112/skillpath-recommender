@@ -1,0 +1,41 @@
+# AI usage disclosure
+
+The submission guidelines allow LLM tools and ask for transparency. This file
+says where AI was used, how heavily, and what I reviewed. The raw prompts are in
+[`prompts/PROMPT_HISTORY.md`](../prompts/PROMPT_HISTORY.md).
+
+## Tool
+
+Claude (Anthropic), used as an agentic coding assistant that could read the
+problem statement, write files, run Python and tests in a sandbox, and make git commits.
+
+## Where AI accelerated the work
+
+| Area | AI involvement |
+|---|---|
+| Reading the brief and planning the architecture | heavy — Claude proposed the module split and the "schema as single source of truth" idea |
+| Data model (`schema.py`) | heavy — drafted by Claude from the brief's entity list |
+| Generator / simulation (`generate.py`) | heavy — drafted by Claude; score model was tuned after looking at the first outputs (initial pass rate ~35 % was unrealistic) |
+| Recommender rules (`recommend.py`) | heavy — drafted by Claude |
+| Validator, evaluation, report, CLI | heavy — drafted by Claude |
+| Tests | heavy — drafted by Claude |
+| Docs (`README.md`, `DESIGN.md`) | heavy — drafted by Claude |
+
+Bugs that were found by running the code (not by reading it) and then fixed:
+
+* a helper that built composite keys returned column names on empty input and
+  produced 2 false "failures" — found because the validator reported unexpected issues on a clean baseline;
+* the future-mastery injector sometimes injected fewer anomalies than requested;
+* loops were injected after decisions, so the engine's exception path never fired —
+  the pipeline was re-ordered so the engine sees (and escalates) them.
+
+## What I reviewed, changed or validated myself
+
+> Fill this in honestly before submitting — reviewers may ask you to explain any line.
+
+- [ ] Ran `python -m pytest -q` and `python -m skillpath run --scale starter` on my own machine
+- [ ] Read `schema.py`, `mastery.py` and `recommend.py` end to end and can explain every rule
+- [ ] Opened `reports/starter/report.html` and checked the numbers make sense
+- [ ] Opened a few rows of `data/starter/tables/recommendation.csv` and traced one recommendation back to its mastery snapshot and attempts
+- [ ] Changes I made myself: …
+- [ ] Decisions I disagreed with / would change: …

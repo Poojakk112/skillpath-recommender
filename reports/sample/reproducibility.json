@@ -1,0 +1,129 @@
+{
+  "scale": "tiny",
+  "seed": 20261022,
+  "files_compared": 15,
+  "same_seed_identical": true,
+  "different_seed_identical": false,
+  "files": [
+    {
+      "file": "ground_truth/anomalies.csv",
+      "sha256_A": "d6ff25abf78e235b8c82471da1730c6029092055a444371e58a09f0abbbfced7",
+      "same_in_B": true,
+      "same_in_C": false,
+      "rows_A": null,
+      "rows_B": null
+    },
+    {
+      "file": "ground_truth/latent_skill_state.csv",
+      "sha256_A": "ea1871eeb8d94643db8a8ddce1b41511e663ab08a0abddcf04dc59e01ea72d74",
+      "same_in_B": true,
+      "same_in_C": false,
+      "rows_A": null,
+      "rows_B": null
+    },
+    {
+      "file": "ground_truth/learner_truth.csv",
+      "sha256_A": "5fc2c2f926eadd904a5cf6984ce87b3afc113a1bb5dadcddbe2f2973f99dfe6b",
+      "same_in_B": true,
+      "same_in_C": false,
+      "rows_A": null,
+      "rows_B": null
+    },
+    {
+      "file": "tables/assessment_result.csv",
+      "sha256_A": "774bd4243115e2f38f661969053a427428e3f68d55dfd626ed09760c44ce3b8a",
+      "same_in_B": true,
+      "same_in_C": false,
+      "rows_A": 4039,
+      "rows_B": 4039
+    },
+    {
+      "file": "tables/attempt.csv",
+      "sha256_A": "f71cfdaa1bedfff16fdc5bc1e2127ed23c04195f27561c57009980ff3c9eafb7",
+      "same_in_B": true,
+      "same_in_C": false,
+      "rows_A": 4045,
+      "rows_B": 4045
+    },
+    {
+      "file": "tables/content_item.csv",
+      "sha256_A": "9cde2429491fbd3f914341d4143afd9b3d43db88260b58f7c1d8ffa0431e309a",
+      "same_in_B": true,
+      "same_in_C": false,
+      "rows_A": 200,
+      "rows_B": 200
+    },
+    {
+      "file": "tables/content_skill.csv",
+      "sha256_A": "534473010e80dc88f3b97e24457d8708fda55c06fd5e85a9a3e40c573ce1ad30",
+      "same_in_B": true,
+      "same_in_C": false,
+      "rows_A": 284,
+      "rows_B": 284
+    },
+    {
+      "file": "tables/course.csv",
+      "sha256_A": "48803c6931aaab2a7f95f81254791e5a26327cdf083e52847e0bb50dbd12dca8",
+      "same_in_B": true,
+      "same_in_C": false,
+      "rows_A": 5,
+      "rows_B": 5
+    },
+    {
+      "file": "tables/learner.csv",
+      "sha256_A": "1e79144057d431d2d2d701832b0a0a5ee7030e98abc330692c1385d07b612793",
+      "same_in_B": true,
+      "same_in_C": false,
+      "rows_A": 150,
+      "rows_B": 150
+    },
+    {
+      "file": "tables/learning_path.csv",
+      "sha256_A": "5557137ee89bd3666d5bb380a63c9fee99767c37d796899156556a2876089574",
+      "same_in_B": true,
+      "same_in_C": false,
+      "rows_A": 256,
+      "rows_B": 256
+    },
+    {
+      "file": "tables/learning_path_event.csv",
+      "sha256_A": "fd2fa4a3785c6fe276206754cd942c5cdd7ec9063952d8f2aabf03b04ad9aaff",
+      "same_in_B": true,
+      "same_in_C": false,
+      "rows_A": 1023,
+      "rows_B": 1023
+    },
+    {
+      "file": "tables/mastery_snapshot.csv",
+      "sha256_A": "9583758ffb8ca8574cd00d82552e339bc385eade630328e10e0295de4a49d49a",
+      "same_in_B": true,
+      "same_in_C": false,
+      "rows_A": 1708,
+      "rows_B": 1708
+    },
+    {
+      "file": "tables/recommendation.csv",
+      "sha256_A": "65c61389fc8d649454991624dedd86853d50556c49e32c05a4aa495e7858464c",
+      "same_in_B": true,
+      "same_in_C": false,
+      "rows_A": 1859,
+      "rows_B": 1859
+    },
+    {
+      "file": "tables/skill.csv",
+      "sha256_A": "5327eae48c3942ff47a91a47e8a3507ac6ce56f173dce6f85b153099f47ac4b6",
+      "same_in_B": true,
+      "same_in_C": true,
+      "rows_A": 50,
+      "rows_B": 50
+    },
+    {
+      "file": "tables/skill_prerequisite.csv",
+      "sha256_A": "b43f257c4d3183f3fa0c617bd69cb595c1a76c54ea7dbb9babbc3553e532ff85",
+      "same_in_B": true,
+      "same_in_C": false,
+      "rows_A": 53,
+      "rows_B": 53
+    }
+  ]
+}
