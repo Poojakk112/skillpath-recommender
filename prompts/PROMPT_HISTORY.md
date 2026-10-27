@@ -42,5 +42,11 @@ frontend. Claude restyled the results report and built the interactive learner e
 (`explore.py`, `explorer_template.html`). Reviewing the explorer exposed the prerequisite-rule
 weakness described in `docs/AI_USAGE.md`; the rule was tightened and a test added.
 
+> i feel this is too heavy if they start ask me question i cant able to tell we follow what they had
+> suggested to do we will do that and add some little exactra feature which stand out my project
+
+Decided to keep only what the brief asks for plus one small extra (the HTML results report).
+The interactive explorer was removed; the stricter prerequisite rule and its test were kept.
+
 The assistant's own working notes are not reproduced here; the code and commit
 history show the evolution.

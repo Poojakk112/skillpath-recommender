@@ -112,8 +112,7 @@ def render(metrics: dict, validation: dict, manifest: dict, repro: dict | None) 
              f"<h1>Recommended lessons were passed {rec:.0f}% of the time. Lessons the engine blocked: {blk:.0f}%.</h1>"
              f"<p class='lead'>SkillPath suggests each learner's next activities using their mastery and the "
              f"prerequisite graph. These are the results on the {_e(scale['name'])} dataset "
-             f"(seed {manifest['seed']}, all data synthetic).</p>"
-             "<a class='cta' href='explorer.html'>Open the learner explorer</a></div>"
+             f"(seed {manifest['seed']}, all data synthetic).</p></div>"
              "<div class='big'>" + bars([("Recommended", rec), ("Eligible, not recommended", elig),
                                           ("Blocked by a prerequisite", blk)], "%", 100,
                                          "Pass rate of lessons learners took within 30 days of a decision in the test period.")
