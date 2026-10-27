@@ -82,7 +82,7 @@ Scales (same generator, only the numbers change — `skillpath/config.py`):
 |---|---|---|---|---|---|---|
 | tiny | 150 | 50 | 200 | 4,000 | 5 | ~2 s |
 | starter | 1,000 | 100 | 400 | 40,000 | 10 | ~10 s |
-| full | 10,000 | 500 | 2,000 | 500,000 | 50 | <!-- FULLTIME --> |
+| full | 10,000 | 500 | 2,000 | 500,000 | 50 | ~2 min |
 
 Fixed seed: `20261022`.
 

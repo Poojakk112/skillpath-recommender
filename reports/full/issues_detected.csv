@@ -1,0 +1,251 @@
+check,issue_type,table,record_id,detail
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000085|SKL-900001,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000104|SKL-900002,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000117|SKL-900003,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000148|SKL-900004,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000168|SKL-900005,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000169|SKL-900006,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000215|SKL-900007,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000227|SKL-900008,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000240|SKL-900009,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000280|SKL-900010,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000288|SKL-900011,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000317|SKL-900012,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000321|SKL-900013,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000343|SKL-900014,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000371|SKL-900015,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000399|SKL-900016,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000495|SKL-900017,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000511|SKL-900018,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000541|SKL-900019,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000589|SKL-900020,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000608|SKL-900021,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000617|SKL-900022,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000674|SKL-900023,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000681|SKL-900024,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000691|SKL-900025,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000737|SKL-900026,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000754|SKL-900027,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000758|SKL-900028,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000786|SKL-900029,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000813|SKL-900030,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000839|SKL-900031,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000930|SKL-900032,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000961|SKL-900033,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-000980|SKL-900034,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-001000|SKL-900035,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-001074|SKL-900036,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-001208|SKL-900037,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-001259|SKL-900038,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-001348|SKL-900039,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-001400|SKL-900040,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-001408|SKL-900041,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-001500|SKL-900042,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-001520|SKL-900043,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-001597|SKL-900044,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-001598|SKL-900045,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-001646|SKL-900046,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-001709|SKL-900047,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-001797|SKL-900048,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-001891|SKL-900049,
+content_skill.skill_id.fk->skill.skill_id,CONTENT_MAPPED_TO_MISSING_SKILL,content_skill,CNT-001979|SKL-900050,
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000166-000172,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000214-000022,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000544-000026,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000801-000004,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000881-000050,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-001369-000040,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-001454-000042,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-002134-000034,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-002537-000021,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-003253-000052,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-003854-000026,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-003864-000064,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-003970-000134,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-004392-000048,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-004473-000020,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-004815-000044,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-004835-000059,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-005654-000005,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-006081-000038,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-007263-000036,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-008192-000038,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-008999-000183,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-009341-000082,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-009444-000019,completed_at < started_at
+attempt.completed_after_started,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-009578-000028,completed_at < started_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000007-000063,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000441-000038,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000688-000049,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-000970-000065,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-002182-000095,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-002234-000022,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-002653-000056,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-002874-000036,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-002960-000010,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-003871-000041,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-004361-000027,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-004538-000051,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-004630-000030,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-004757-000080,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-005613-000080,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-007193-000064,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-007441-000005,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-007817-000036,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-008374-000035,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-008542-000024,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-008866-000028,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-009223-000071,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-009669-000045,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-009692-000226,started_at < learner.signup_at
+attempt.after_signup,ATTEMPT_TIMESTAMP_ORDER_INVALID,attempt,ATT-LRN-009921-000024,started_at < learner.signup_at
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094264,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094265,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094266,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094267,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094268,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094269,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094270,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094271,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094272,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094273,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094274,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094275,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094276,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094277,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094278,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094279,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094280,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094281,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094282,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094283,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094284,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094285,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094286,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094287,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094288,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094289,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094290,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094291,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094292,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094293,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094294,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094295,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094296,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094297,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094298,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094299,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094300,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094301,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094302,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094303,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094304,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094305,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094306,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094307,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094308,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094309,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094310,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094311,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094312,last_evidence_at >= as_of
+mastery_snapshot.evidence_before_as_of,MASTERY_USES_FUTURE_ATTEMPT,mastery_snapshot,MSN-00094313,last_evidence_at >= as_of
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101894,SKL-000141 0.44<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101897,SKL-000399 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101900,SKL-000150 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101903,SKL-000041 0.47<0.60; SKL-000042 0.41<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101906,SKL-000139 0.30<0.60; SKL-000140 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101909,SKL-000132 0.51<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101912,SKL-000291 0.53<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101915,SKL-000130 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101918,SKL-000069 0.30<0.60; SKL-000113 0.50<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101921,SKL-000040 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101924,SKL-000401 0.55<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101927,SKL-000190 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101930,SKL-000150 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101933,SKL-000410 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101936,SKL-000160 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101939,SKL-000150 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101942,SKL-000056 0.49<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101895,SKL-000223 0.54<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101898,SKL-000124 0.50<0.60; SKL-000125 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101901,SKL-000309 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101904,SKL-000146 0.50<0.60; SKL-000147 0.55<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101907,SKL-000262 0.44<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101910,SKL-000392 0.28<0.60; SKL-000393 0.44<0.60; SKL-000395 0.21<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101913,SKL-000341 0.37<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101916,SKL-000475 0.51<0.60; SKL-000477 0.43<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101919,SKL-000090 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101922,SKL-000450 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101925,SKL-000094 0.51<0.60; SKL-000096 0.56<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101928,SKL-000010 0.49<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101931,SKL-000150 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101934,SKL-000335 0.58<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101937,SKL-000041 0.58<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101940,SKL-000052 0.52<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101943,SKL-000002 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101896,SKL-000003 0.51<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101899,SKL-000163 0.44<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101902,SKL-000202 0.53<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101905,SKL-000029 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101908,SKL-000139 0.30<0.60; SKL-000140 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101911,SKL-000200 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101914,SKL-000003 0.58<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101917,SKL-000191 0.56<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101920,SKL-000103 0.57<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101923,SKL-000090 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101926,SKL-000004 0.33<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101929,SKL-000245 0.58<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101932,SKL-000301 0.32<0.60; SKL-000302 0.59<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101935,SKL-000090 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101938,SKL-000199 0.30<0.60
+recommendation.prerequisites_respected,REC_VIOLATES_PREREQUISITE,recommendation,REC-00101941,SKL-000024 0.51<0.60
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-003682,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-004225,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-004710,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-004742,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-006530,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-007009,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-007222,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-007897,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-008078,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-008410,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-008860,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-009269,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-009340,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-009351,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-009500,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-009669,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-009774,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-010257,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-010312,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-010411,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2025-010473,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-010843,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-011276,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-011401,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-011544,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-011958,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-011994,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-012097,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-012299,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-012526,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-012548,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-012667,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-013119,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-013239,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-013374,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-013599,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-013640,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-013969,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-014066,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-014076,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-014252,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-014324,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-014327,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-014468,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-014491,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-014548,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-014822,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-015067,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-015291,"8 attempts on <= 2 items, no pass, no gain"
+learning_path.no_loop_without_progress,PATH_LOOP_NO_PROGRESS,learning_path,PATH-2026-015436,"8 attempts on <= 2 items, no pass, no gain"
