@@ -360,20 +360,31 @@ def run(tables: dict, dates=C.DECISION_DATES) -> tuple[pd.DataFrame, pd.DataFram
     recs["mastery_snapshot_id"] = [snap_id.get((t, l, s)) for t, l, s in
                                    zip(recs["as_of"], recs["learner_id"], recs["target_skill_id"])]
     recs["engine_version"] = C.ENGINE_VERSION
-    outcomes = [outcome(ctx, hist, l, c, t) for l, c, t in zip(recs["learner_id"], recs["content_id"], recs["as_of"])]
-    recs["outcome"] = [o[0] for o in outcomes]
-    recs["outcome_attempt_id"] = [o[1] for o in outcomes]
-    recs["outcome_at"] = pd.to_datetime([o[2] for o in outcomes])
     recs["as_of"] = pd.to_datetime(recs["as_of"])
-    cols = ["recommendation_id", "decision_id", "learner_id", "path_id", "as_of", "rank", "content_id",
-            "target_skill_id", "mastery_snapshot_id", "reason_code", "rationale", "predicted_success",
-            "route_to", "engine_version", "outcome", "outcome_attempt_id", "outcome_at"]
-    return recs[cols], snapshots
+    recs = fill_outcomes(recs, tables["attempt"], ctx, hist)
+    return recs[REC_COLUMNS], snapshots
+
+
+REC_COLUMNS = ["recommendation_id", "decision_id", "learner_id", "path_id", "as_of", "rank", "content_id",
+               "target_skill_id", "mastery_snapshot_id", "reason_code", "rationale", "predicted_success",
+               "route_to", "engine_version", "outcome", "outcome_attempt_id", "outcome_at"]
+
+
+def fill_outcomes(recs: pd.DataFrame, attempts: pd.DataFrame, ctx=None, hist=None) -> pd.DataFrame:
+    """Outcomes are recorded after the 30-day window closes, from the attempts table."""
+    hist = hist or History(attempts)
+    recs = recs.copy()
+    res = [outcome(ctx, hist, l, c, pd.Timestamp(t).value)
+           for l, c, t in zip(recs["learner_id"], recs["content_id"], recs["as_of"])]
+    recs["outcome"] = [o[0] for o in res]
+    recs["outcome_attempt_id"] = [o[1] for o in res]
+    recs["outcome_at"] = pd.to_datetime([o[2] for o in res])
+    return recs
 
 
 def outcome(ctx: Context, hist: History, learner: str, content, t: int) -> tuple:
     """First attempt of the recommended item within OUTCOME_WINDOW_DAYS after the decision."""
-    if content is None or (isinstance(content, float) and np.isnan(content)):
+    if content is None or (not isinstance(content, str) and pd.isna(content)):
         return "NOT_APPLICABLE", None, None
     for r in hist.between(learner, t, t + C.OUTCOME_WINDOW_DAYS * NS_PER_DAY):
         if r.content == content:
